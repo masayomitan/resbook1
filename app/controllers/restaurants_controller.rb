@@ -10,6 +10,9 @@ class RestaurantsController < ApplicationController
   def create
   end
 
+  def show
+    @pimages = @restaurant.iamges
+  end
 
 
 end

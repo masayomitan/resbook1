@@ -1,0 +1,25 @@
+= render 'shared/header'
+
+.row
+  .col-md-3
+    = render 'restaurants/res_menu'
+  .col-md-9
+    .panel.panel-default
+      .panel-heading
+        写真
+      .panel-body
+      #image-box
+        .item-num-0#image-box__container
+        = form_with model: @restaurant, method: 'post', local: true do |f|
+          .hidden-content
+            = f.fields_for :images do |i|
+              = i.file_field :image, class: "hidden-field"
+              %input{class:"hidden-field", type: "file", name: "item[images_attributes][1][image]", id: "item_images_attributes_1_image" }
+              %input{class:"hidden-field", type: "file", name: "item[images_attributes][2][image]", id: "item_images_attributes_2_image" }
+              %input{class:"hidden-field", type: "file", name: "item[images_attributes][3][image]", id: "item_images_attributes_3_image" }
+              %input{class:"hidden-field", type: "file", name: "item[images_attributes][4][image]", id: "item_images_attributes_4_image" }
+            %i.fas.fa-camera
+              最大5枚までアップロードできます
+          .text-center
+            = f.submit "追加", class: "btn btn-form"
+            -# #photos= render 'photos/photos_list'
