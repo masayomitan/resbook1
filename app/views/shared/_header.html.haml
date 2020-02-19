@@ -1,0 +1,12 @@
+.navbar-navbar-default
+  .container-fluid
+    .navbar-header
+      %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+
+      = link_to "Airbook", root_path, class: "navbar-brand"
+      
+      = link_to "サインアウト", destroy_user_session_path, method: :delete
