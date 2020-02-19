@@ -1,10 +1,25 @@
-.sidebar-list {
-  padding-left: 0;
-  list-style: none;
+.panel-default .panel-heading {
+  color: #ffffff;
+  background-color: #00A699;
+  font-size: 18px;
+  font-weight: 400;
+}
+.btn.btn-default {
+  width: 100%;
+  border-color: #c4c4c4;
+  background: white;
+  color: #484848;
+  border-radius: 2px;
+  padding: 10px 0;
+  margin-top: 10px;
 }
 
-.sidebar-item {
-  padding: 10px 0;
-  font-size: 16px;
-  color: #82888a;
+.btn.btn-normal {
+  border: 1px solid #ff5a5f;
+  background-color: #ff5a5f;
+}
+
+.btn.btn-form {
+  border: 1px solid #00A699;
+  background-color: #00A699;
 }

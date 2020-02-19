@@ -11,8 +11,8 @@ class RestaurantsController < ApplicationController
   end
 
   def show
+    @pimages = @restaurant.iamges
   end
-
 
 
 end
