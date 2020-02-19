@@ -1,0 +1,93 @@
+.welcome_message{
+  background-color: red;
+  width:1100px;
+  height: 100px;
+  margin-left: auto;
+  text-align: center;
+  line-height: 100px;
+  justify-content: space-between;
+  position: relative;
+  
+  
+}
+  
+
+.coverpage_list{
+  width: 80%;
+  height: 100px;
+  margin-left: auto;
+
+  .coverpage_dinner_list{
+    background-color:yellow;
+    width:1100px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    text-align: center;
+
+  .dinner1{
+    height: 250px;
+    width: 300px;
+    background-color: blanchedalmond;
+  }
+  .dinner2{
+    height: 250px;
+    width: 300px;
+    background-color: blueviolet;
+  }
+  .dinner3{
+    height: 250px;
+    width: 300px;
+    background-color: blue;
+  }
+  }
+
+  .coverpage_midlle_price_list{
+    background-color: green;
+    width:1100px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    text-align: center;
+
+  .price1{
+    height: 250px;
+    width: 300px;
+    background-color: blue;
+  }
+  .price2{
+    height: 250px;
+    width: 300px;
+    background-color: blue;
+    
+  }
+  .price3{
+    height: 250px;
+    width: 300px;
+    background-color: blue;
+    
+  }
+  }
+  
+  .coverpage_genre_list{
+    background-color: black;
+    width:1100px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    text-align: center;
+
+    .genre1{
+      height: 250px;
+      width: 300px;
+      background-color: blue;
+      
+    }
+  }
+    
+  .coverpage_top_restaurants_list{
+    background-color: yellow;
+    width:1100px;
+
+  }
+}

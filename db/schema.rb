@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_18_090043) do
+ActiveRecord::Schema.define(version: 2020_02_19_022717) do
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "image", null: false
@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(version: 2020_02_18_090043) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
   end
 
   add_foreign_key "images", "restaurants"

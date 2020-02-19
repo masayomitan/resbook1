@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
 
-  root 'restaurants#index'
+  devise_for :users, :controllers => {
+  :registrations => 'users/registrations',
+  :sessions => 'users/sessions'   
+} 
+
+
+  root 'tops#index'
+  resources :restaurants
 
 
 end
