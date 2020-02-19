@@ -1,30 +1,34 @@
 %ul.sidebar-list
   %li.sidebar-item
-    = link_to "" class: "sidebar-link active"
-    %span.pull-right.text-babu
-      %i.fa.fa-check
+    = link_to "営業時間", time_restaurant_path, class: "sidebar-link active"
+    -# %span.pull-right.text-babu
+    -#   %i.fa.fa-check
   %li.sidebar-item
-    = link_to "料金", pricing_room_path, class: "sidebar-link active"
-    - if !@room.price.blank?
-      %span.pull-right.text-babu
-        %i.fa.fa-check
+    = link_to "料金", price_restaurant_path,  class: "sidebar-link active"
+    -# - if !@room.price.blank?
+      -# %span.pull-right.text-babu
+      -#   %i.fa.fa-check
   %li.sidebar-item
-    -# = link_to "説明", description_room_path, class: "sidebar-link active"
-    - if !@room.listing_name.blank?
-      %span.pull-right.text-babu
-        %i.fa.fa-check
+    = link_to "住所  電話番号", class: "sidebar-link active"
+    -# - if !@room.listing_name.blank?
+      -# %span.pull-right.text-babu
+      -#   %i.fa.fa-check
   %li.sidebar-item
-    -# = link_to "写真", photo_upload_room_path, class: "sidebar-link active"
-    - if !@room.photos.blank?
-      %span#photo_check.pull-right.text-babu
-        %i.fa.fa-check
+    = link_to "写真", class: "sidebar-link active"
+    -# - if !@room.photos.blank?
+      -# %span#photo_check.pull-right.text-babu
+      -#   %i.fa.fa-check
   %li.sidebar-item
-    -# = link_to "アメニティ", amenities_room_path, class: "sidebar-link active"
-    %span.pull-right.text-babu
-      %i.fa.fa-check
+    = link_to "料理  メニュー", class: "sidebar-link active"
+    -# %span.pull-right.text-babu
+    -#   %i.fa.fa-check
   %li.sidebar-item
-    -# = link_to "ロケーション", location_room_path, class: "sidebar-link active"
-    - if !@room.address.blank?
-      %span.pull-right.text-babu
-        %i.fa.fa-check
-%hr/
+    = link_to "その他", class: "sidebar-link active"
+    -# - if !@room.address.blank?
+      -# %span.pull-right.text-babu
+      -#   %i.fa.fa-check
+
+-# - is_ready = !@room.active && !@room.price.blank? && !@room.listing_name.blank? && !@room.photos.blank? && !@room.address.blank?
+-# = form_for @room do |f|
+-#   = f.hidden_field :active, value: true
+-#   = f.submit "完了！！", id: "publish_button", class: "btn btn-normal btn-block", disabled: !is_ready

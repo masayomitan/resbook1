@@ -1,0 +1,16 @@
+= render 'shared/header'
+
+.row
+  .col-md-3
+    = render 'restaurants/res_menu'
+  .col-md-9
+    .panel.panel-default
+      .panel-heading
+        住所　入力
+      .panel-body
+        = form_with model: @restaurant do |f|
+          .form-group
+            %label address
+            = f.text_field :address, placeholder: "住所は?", class: "form-control"
+          .text-center
+            = f.submit "保存", class: "btn btn-form"

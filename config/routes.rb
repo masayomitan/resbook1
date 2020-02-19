@@ -7,7 +7,16 @@ Rails.application.routes.draw do
 
 
   root 'tops#index'
-  resources :restaurants
+  resources :restaurants do
+   member do
+    get 'time'
+    get 'price'
+    get 'address'
+    get 'image'
+    get 'cuisine'
+    get 'other'
+   end
+  end
 
 
 end
