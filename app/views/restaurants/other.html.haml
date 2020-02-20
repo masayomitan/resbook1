@@ -1,0 +1,53 @@
+= render 'shared/header'
+
+.row
+  .col-md-3
+    = render 'restaurants/res_menu'
+  .col-md-9
+    .panel.panel-default
+      .panel-heading
+        その他
+      .panel-body
+        = form_with model: @restaurant do |f|
+          .row.form-group
+          .col-md-4
+            = f.check_box :parking
+            駐車場
+          .col-md-4
+            = f.check_box :pets
+            ペット
+          .col-md-4
+            = f.check_box :tobacco
+            タバコ
+          .col-md-4
+            = f.check_box :free_wifi
+            free wifi
+          .col-md-4
+            = f.check_box :takeout
+            お持ち帰り
+          .col-md-4
+            = f.check_box :private_room
+            個室
+          .col-md-4
+            = f.check_box :party
+            貸切
+          .col-md-4
+            = f.check_box :all_you_can_edrink
+            飲み放題
+          .col-md-4
+            = f.check_box :all_you_can_eat
+            食べ放題
+
+          .text-center
+            = f.submit "Save", class: "btn btn-form"
+-# t.boolean :cards
+-#       t.boolean :parking
+-#       t.boolean :pets
+-#       t.boolean :all_you_can_eat
+-#       t.boolean :all_you_can_edrink
+-#       t.boolean :tobacco
+-#       t.boolean :free_wifi
+-#       t.boolean :private_room
+-#       t.boolean :party
+-#       t.boolean :takeout
+    

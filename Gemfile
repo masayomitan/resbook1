@@ -60,10 +60,12 @@ gem 'bootstrap3-datetimepicker-rails', '~> 4.14.30'
 gem 'bootstrap-sass'
 gem "geocoder"
 gem "haml-rails"
+gem 'active_hash'
 gem "font-awesome-sass"
 gem "pry-rails"
 gem 'rails-i18n'
 gem "toastr-rails"
+gem 'carrierwave'
 gem 'mini_magick'
 gem 'active_hash'
 gem 'jquery-rails' 
