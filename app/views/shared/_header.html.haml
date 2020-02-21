@@ -8,5 +8,11 @@
         %span.icon-bar
 
       = link_to "Restaurant Book", root_path, class: "navbar-brand"
-      
-      = link_to "サインアウト", destroy_user_session_path, method: :delete
+
+      - if user_signed_in?
+        %h2 名前： #{current_user.name}
+        = link_to "ログアウト", destroy_user_session_path, method: :delete
+      - else
+        %h2 現在ログインしていません
+        = link_to "ログイン", new_user_session_path, class: 'post'
+        = link_to "新規登録", new_user_registration_path, class: 'post'

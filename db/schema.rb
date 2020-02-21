@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2020_02_19_022717) do
 
-  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "image", null: false
     t.bigint "restaurant_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2020_02_19_022717) do
     t.index ["restaurant_id"], name: "index_images_on_restaurant_id"
   end
 
-  create_table "more_info", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "more_info", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "restaurants_id", null: false
     t.boolean "cards"
     t.boolean "parking"
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2020_02_19_022717) do
     t.index ["restaurants_id"], name: "index_more_info_on_restaurants_id"
   end
 
-  create_table "reservations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "reservations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "restaurant_id", null: false
     t.datetime "start_date"
@@ -48,19 +48,23 @@ ActiveRecord::Schema.define(version: 2020_02_19_022717) do
     t.index ["user_id"], name: "index_reservations_on_user_id"
   end
 
-  create_table "restaurants", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "restaurants", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "restaurant_name", null: false
     t.integer "postal_code", null: false
     t.string "address", null: false
     t.integer "tel", null: false
     t.integer "average_price", null: false
     t.string "genre", null: false
     t.string "horiday"
-    t.string "drink"
+    t.string "drink", null: false
+    t.text "describe", null: false
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_restaurants_on_user_id"
   end
 
-  create_table "times", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "times", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "restaurants_id", null: false
     t.time "lunch_open_time"
     t.time "lunch_close_time"
@@ -70,7 +74,7 @@ ActiveRecord::Schema.define(version: 2020_02_19_022717) do
     t.index ["restaurants_id"], name: "index_times_on_restaurants_id"
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -85,5 +89,6 @@ ActiveRecord::Schema.define(version: 2020_02_19_022717) do
   add_foreign_key "more_info", "restaurants", column: "restaurants_id"
   add_foreign_key "reservations", "restaurants"
   add_foreign_key "reservations", "users"
+  add_foreign_key "restaurants", "users"
   add_foreign_key "times", "restaurants", column: "restaurants_id"
 end
