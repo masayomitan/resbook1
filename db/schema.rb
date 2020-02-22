@@ -20,21 +20,6 @@ ActiveRecord::Schema.define(version: 2020_02_19_022717) do
     t.index ["restaurant_id"], name: "index_images_on_restaurant_id"
   end
 
-  create_table "more_info", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "restaurants_id", null: false
-    t.boolean "cards"
-    t.boolean "parking"
-    t.boolean "pets"
-    t.boolean "all_you_can_eat"
-    t.boolean "all_you_can_edrink"
-    t.boolean "tobacco"
-    t.boolean "free_wifi"
-    t.boolean "private_room"
-    t.boolean "party"
-    t.boolean "takeout"
-    t.index ["restaurants_id"], name: "index_more_info_on_restaurants_id"
-  end
-
   create_table "reservations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "restaurant_id", null: false
@@ -50,14 +35,22 @@ ActiveRecord::Schema.define(version: 2020_02_19_022717) do
 
   create_table "restaurants", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "restaurant_name", null: false
-    t.integer "postal_code", null: false
+    t.text "describe", null: false
     t.string "address", null: false
     t.integer "tel", null: false
-    t.integer "average_price", null: false
+    t.integer "average_price_lunch", null: false
+    t.integer "average_price_dinner", null: false
     t.string "genre", null: false
     t.string "horiday"
-    t.string "drink", null: false
-    t.text "describe", null: false
+    t.boolean "cards"
+    t.boolean "parking"
+    t.boolean "all_you_can_eat"
+    t.boolean "all_you_can_drink"
+    t.boolean "tobacco"
+    t.boolean "free_wifi"
+    t.boolean "private_room"
+    t.boolean "party"
+    t.boolean "takeout"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -86,7 +79,6 @@ ActiveRecord::Schema.define(version: 2020_02_19_022717) do
   end
 
   add_foreign_key "images", "restaurants"
-  add_foreign_key "more_info", "restaurants", column: "restaurants_id"
   add_foreign_key "reservations", "restaurants"
   add_foreign_key "reservations", "users"
   add_foreign_key "restaurants", "users"

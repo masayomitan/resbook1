@@ -18,5 +18,11 @@
 
   <body>
     <%= yield %>
+
+    <% unless flash.empty? %> //flashにメッセージがある時
+      <script>
+        toastr.sccess('更新しました')
+      </script>
+    <% end %>
   </body>
 </html>
