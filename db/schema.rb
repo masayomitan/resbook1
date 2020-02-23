@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_22_055450) do
+ActiveRecord::Schema.define(version: 2020_02_23_053645) do
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "image", null: false
@@ -40,8 +40,8 @@ ActiveRecord::Schema.define(version: 2020_02_22_055450) do
     t.bigint "tel", null: false
     t.integer "average_price_lunch", null: false
     t.integer "average_price_dinner", null: false
-    t.string "genre", null: false
-    t.string "horiday"
+    t.integer "genre_id", null: false
+    t.integer "horiday_id"
     t.boolean "cards"
     t.boolean "parking"
     t.boolean "all_you_can_eat"
@@ -54,17 +54,9 @@ ActiveRecord::Schema.define(version: 2020_02_22_055450) do
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.float "latitude"
+    t.float "longitude"
     t.index ["user_id"], name: "index_restaurants_on_user_id"
-  end
-
-  create_table "times", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "restaurants_id", null: false
-    t.time "lunch_open_time"
-    t.time "lunch_close_time"
-    t.time "dinner_open__time"
-    t.time "dinner_close_time"
-    t.time "all__time"
-    t.index ["restaurants_id"], name: "index_times_on_restaurants_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -82,5 +74,4 @@ ActiveRecord::Schema.define(version: 2020_02_22_055450) do
   add_foreign_key "reservations", "restaurants"
   add_foreign_key "reservations", "users"
   add_foreign_key "restaurants", "users"
-  add_foreign_key "times", "restaurants", column: "restaurants_id"
 end

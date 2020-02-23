@@ -7,8 +7,8 @@ class CreateRestaurants < ActiveRecord::Migration[6.0]
       t.integer    :tel,                      null: false
       t.integer    :average_price_lunch,      null: false
       t.integer    :average_price_dinner,     null: false
-      t.string     :genre,                    null: false
-      t.string     :horiday
+      t.integer    :genre_id,                 null: false
+      t.integer    :horiday_id
       
       t.boolean :cards
       t.boolean :parking

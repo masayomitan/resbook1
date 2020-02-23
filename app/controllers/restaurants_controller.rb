@@ -36,7 +36,7 @@ class RestaurantsController < ApplicationController
     # new_params = restaurant_params.merge(active: true) if is_ready_room
     
     if @restaurant.update(new_params)
-      flash[:notice] = "Saved..."
+      redirect_to restaurant_path(@restaurant), notice: "Saved..."
     else
       flash[:alert] = "Something went wrong..."
     end
@@ -60,7 +60,7 @@ class RestaurantsController < ApplicationController
   end
 
   def restaurant_params
-    params.require(:restaurant).permit(:restaurant_name, :describe, :address, :tel, :average_price_lunch, :average_price_dinner, :genre, :horiday, :drink,
+    params.require(:restaurant).permit(:restaurant_name, :describe, :address, :tel, :average_price_lunch, :average_price_dinner, :genre_id, :horiday_id, :drink,
       :cards, :parking, :all_you_can_eat, :all_you_can_drink, :tobacco, :free_wifi, :private_room, :party, :takeout,
       images_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id)
   end

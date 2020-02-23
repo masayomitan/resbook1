@@ -23,8 +23,9 @@
       = @restaurant.horiday
 
   .restaurant-show-name-content-pics
-    = image_tag @restaurant.images[0].image.url, class: "pro_pic", width: "50%"
+    = image_tag @restaurant.images[0].image.url, width: "100%", height: "100%"
       - @restaurant.images.each do |i|
+
 
   .restaurant-show-name-content-list
     %li  概要　メニュー
@@ -39,8 +40,9 @@
     .restaurant-show-name-content-2
     %i.fas.fa-moon
     = number_to_currency(@restaurant.average_price_dinner, unit: "￥",precision: 0)
-  .restaurant-show-name-content-other
+  .restaurant-show-name-content-other-box
     %ul.restaurant-show-name-content-other
+      %li その他情報
       %li{:class => "#{'text-line-through' if !@restaurant.cards}"} クレジットカード
       %li{:class => "#{'text-line-through' if !@restaurant.parking}"} 駐車場
       %li{:class => "#{'text-line-through' if !@restaurant.all_you_can_eat}"} 食べ放題
@@ -48,4 +50,22 @@
       %li{:class => "#{'text-line-through' if !@restaurant.private_room}"} 個室
       %li{:class => "#{'text-line-through' if !@restaurant.party}"} 宴会
       %li{:class => "#{'text-line-through' if !@restaurant.takeout}"} お持ち帰り
-    
+    .restaurant-show-name-content-map
+      #map{:style => "width: 300px; height: 300px"}
+        :javascript
+          function initialize() {
+            var location = {lat: #{@restaurant.latitude}, lng: #{@restaurant.longitude}};
+            var map = new google.maps.Map(document.getElementById('map'), {
+              center: location,
+              zoom: 14
+            });
+
+            var marker = new google.maps.Marker({
+              position: location,
+              map: map
+            });
+            
+            infoWindow.open(map, marker);
+          }
+
+            google.maps.event.addDomListener(window, 'load', initialize);

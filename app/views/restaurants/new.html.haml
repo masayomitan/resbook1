@@ -26,15 +26,15 @@
           
             .form-group
               %label ジャンル
-              = f.text_field :genre, class: "form-control"
-              -# = f.collection_select :restaurant_id, @restaurant, :name, :name, prompt: "--"
+              = f.collection_select :genre_id, Genre.all, :id, :name, prompt: "--"
 
             %label 住所
-            = f.text_field :address, placeholder: "住所は?", class: "form-control"
+            = f.text_field :address, placeholder: "住所は?", class: "form-control", id: "autoaddress"
               
             %label 電話番号
             = f.number_field :tel, placeholder: "電話番号?", class: "form-control"
 
+            .form-group-food
             %label ランチ価格帯
             = f.number_field :average_price_lunch, placeholder: "料金入力", class: "form-control", step: "100"
 
@@ -45,3 +45,8 @@
             
           .text-center
             = f.submit "Save", class: "btn btn-form"
+
+:javascript
+  $(function() {
+    $("#autoaddress").geocomplete();
+  })

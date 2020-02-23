@@ -19,6 +19,10 @@
   width: 10px;       
 }
 
+.restaurant-show-name-content-pics{
+  width: 600px;
+  height: 450px;
+}
 
 .restaurant-show-name-content-list{
   font-weight:800;
@@ -33,11 +37,14 @@
 .restaurant-show-name-content-horiday{
   margin-left: 3px;
 }
+.restaurant-show-name-content-other {
+}
 
 .restaurant-show-name-content-other li {
   margin-bottom: 10px;
   font-size: 16px;
   list-style-type: none;
+
 }
 
 .restaurant-show-name-content-other .text-line-through {
@@ -46,6 +53,10 @@
   font-size: 14px;
 }
 
+.restaurant-show-name-content-map{
+  display: flex; 
+}
 .h2{
   font-weight: bold;
   }
+
