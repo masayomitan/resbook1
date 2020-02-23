@@ -1,29 +1,6 @@
 %ul.sidebar-list
   %li.sidebar-item
-    = link_to "店名  こだわり説明", describe_restaurant_path, class: "sidebar-link active"
-    -# %span.pull-right.text-babu
-    -#   %i.fa.fa-check
-  %li.sidebar-item
     = link_to "営業時間", time_restaurant_path, class: "sidebar-link active"
-    -# %span.pull-right.text-babu
-    -#   %i.fa.fa-check
-  %li.sidebar-item
-    = link_to "料金", price_restaurant_path,  class: "sidebar-link active"
-    -# - if !@room.price.blank?
-      -# %span.pull-right.text-babu
-      -#   %i.fa.fa-check
-  %li.sidebar-item
-    = link_to "住所  電話番号", address_restaurant_path, class: "sidebar-link active"
-    -# - if !@room.listing_name.blank?
-      -# %span.pull-right.text-babu
-      -#   %i.fa.fa-check
-  %li.sidebar-item
-    = link_to "写真", image_restaurant_path,class: "sidebar-link active"
-    -# - if !@room.photos.blank?
-      -# %span#photo_check.pull-right.text-babu
-      -#   %i.fa.fa-check
-  %li.sidebar-item
-    = link_to "料理  メニュー", cuisine_restaurant_path, class: "sidebar-link active"
     -# %span.pull-right.text-babu
     -#   %i.fa.fa-check
   %li.sidebar-item
@@ -31,6 +8,8 @@
     -# - if !@room.address.blank?
       -# %span.pull-right.text-babu
       -#   %i.fa.fa-check
+  %li.sidebar-item
+    = link_to "戻る", new_restaurant_path, class: "sidebar-link active"
 
 -# - is_ready = !@room.active && !@room.price.blank? && !@room.listing_name.blank? && !@room.photos.blank? && !@room.address.blank?
 -# = form_for @room do |f|

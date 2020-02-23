@@ -1,6 +1,8 @@
 class TopsController < ApplicationController
 
+  
   def index
+    @restaurant = Restaurant.all
   end
 
   def new
@@ -8,5 +10,10 @@ class TopsController < ApplicationController
 
   def create
   end
+
+  def show
+    @pimages = @restaurant.iamges
+  end
+
 
 end

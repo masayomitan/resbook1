@@ -1,0 +1,47 @@
+= render 'shared/header'
+
+.row
+  .col-md-3
+  .col-md-7
+    .panel.panel-default
+      .panel-heading
+        情報入力
+      .panel-body
+        = form_with model: @restaurant do |f|
+          
+          .hidden-content
+            = f.fields_for :images do |image|
+              .js-file_group{"data-index" => "#{image.index}"}
+              = image.file_field :image
+            %i.fas.fa-camera
+              最大5枚までアップロードできます
+          .form-group
+            %label 店名
+            = f.text_field :restaurant_name , placeholder: "店名をお願いします。", class: "form-control", required: true
+
+          .form-group
+            %label 店説明  メニュー概要
+            = f.text_area :describe, rows: 6, placeholder: "例)内装が綺麗で料理も美味しかった。ランチセットが800円", class: "form-control", required: true
+          
+          
+            .form-group
+              %label ジャンル
+              = f.text_field :genre, class: "form-control"
+              -# = f.collection_select :restaurant_id, @restaurant, :name, :name, prompt: "--"
+
+            %label 住所
+            = f.text_field :address, placeholder: "住所は?", class: "form-control"
+              
+            %label 電話番号
+            = f.number_field :tel, placeholder: "電話番号?", class: "form-control"
+
+            %label ランチ価格帯
+            = f.number_field :average_price_lunch, placeholder: "料金入力", class: "form-control", step: "100"
+
+            %label ディナー価格帯
+            = f.number_field :average_price_dinner, placeholder: "料金入力", class: "form-control", step: "100"
+
+            
+            
+          .text-center
+            = f.submit "Save", class: "btn btn-form"

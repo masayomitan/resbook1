@@ -12,7 +12,17 @@
       - if user_signed_in?
         %h2 名前： #{current_user.name}
         = link_to "ログアウト", destroy_user_session_path, method: :delete
+
+        %ul.dropdown-menu
+        %li= link_to "レストラン登録", new_restaurant_path
+        -# %li= link_to "リストnリストn", new_room_path
+        -# %li= link_to "Your Reservations", your_reservations_path
+        -# %li= link_to "Your Trips", your_trips_path
+        -# %li.divider{:role => "separator"}
+        -# %li= link_to "Edit Profile", edit_user_registration_path
+        -# %li= link_to "Log out", destroy_user_session_path, method: :delete
       - else
         %h2 現在ログインしていません
         = link_to "ログイン", new_user_session_path, class: 'post'
         = link_to "新規登録", new_user_registration_path, class: 'post'
+

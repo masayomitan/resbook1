@@ -58,3 +58,26 @@
   border: 1px solid #00A699;
   background-color: #00A699;
 }
+
+.row{
+  padding: 50px; 
+  margin:  0 100px 0 0; 
+
+}
+
+
+.error{
+  font-size: 20px;
+  font-weight: bold;
+  color: red;
+  text-align: center;
+}
+.exhibitionHeader{
+  height: 128px;
+  // @include flexbox($justify-content: center);
+
+  &__logo{
+    width: 220px;
+  }
+}
+

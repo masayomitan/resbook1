@@ -4,8 +4,9 @@
     <title>Resbook</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <!-- BootstrapのCSS読み込み -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <%# <link href="css/bootstrap.min.css" rel="stylesheet"> %>
     <!-- jQuery読み込み -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- BootstrapのJS読み込み -->
@@ -18,5 +19,11 @@
 
   <body>
     <%= yield %>
+
+    <% unless flash.empty? %> //flashにメッセージがある時
+      <script>
+        toastr.sccess('更新しました')
+      </script>
+    <% end %>
   </body>
 </html>
