@@ -1,0 +1,51 @@
+
+.restaurant-show{
+  margin-left: 200px;
+}
+.restaurant-show-name {
+  margin-left: 20px;
+  font-size: 30px;
+  font-weight:800;
+}
+.restaurant-show-name-content{
+  margin-left: 20px;
+}
+
+.restaurant-show-name-content-1{
+  display: inline-block; 
+}
+.restaurant-show-name-content-2{
+  display: inline-block;  
+  width: 10px;       
+}
+
+
+.restaurant-show-name-content-list{
+  font-weight:800;
+  font-size: 15px;
+}
+
+.restaurant-show-name-content-describe{
+  width: 600px;
+}
+
+
+.restaurant-show-name-content-horiday{
+  margin-left: 3px;
+}
+
+.restaurant-show-name-content-other li {
+  margin-bottom: 10px;
+  font-size: 16px;
+  list-style-type: none;
+}
+
+.restaurant-show-name-content-other .text-line-through {
+  text-decoration: line-through;
+  color: rgba(0,0,0,0.45);
+  font-size: 14px;
+}
+
+.h2{
+  font-weight: bold;
+  }

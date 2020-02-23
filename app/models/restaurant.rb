@@ -1,6 +1,6 @@
 class Restaurant < ApplicationRecord
 
-  belongs_to :user
+  belongs_to :user, optional: true
   has_many :images, foreign_key: :restaurant_id, dependent: :destroy
   has_many :reservations
 
@@ -14,4 +14,6 @@ class Restaurant < ApplicationRecord
 
 
   accepts_nested_attributes_for :images, allow_destroy: true
+
+  
 end

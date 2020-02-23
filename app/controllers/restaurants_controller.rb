@@ -10,6 +10,8 @@ class RestaurantsController < ApplicationController
   def new
     @restaurant = Restaurant.new
     @restaurant.images.new
+    4.times { @restaurant.images.new }
+    
   end
 
   def create

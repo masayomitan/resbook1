@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   :sessions => 'users/sessions'   
 } 
 
-
   root 'tops#index'
+  
   resources :restaurants do
     member do
       get 'time'

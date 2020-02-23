@@ -8,13 +8,11 @@
         情報入力
       .panel-body
         = form_with model: @restaurant do |f|
+          
           .hidden-content
-            = f.fields_for :images do |i|
-              = i.file_field :image, class: "hidden-field"
-              %input{class:"hidden-field", type: "file", name: "item[images_attributes][1][image]", id: "item_images_attributes_1_image" }
-              %input{class:"hidden-field", type: "file", name: "item[images_attributes][2][image]", id: "item_images_attributes_2_image" }
-              %input{class:"hidden-field", type: "file", name: "item[images_attributes][3][image]", id: "item_images_attributes_3_image" }
-              %input{class:"hidden-field", type: "file", name: "item[images_attributes][4][image]", id: "item_images_attributes_4_image" }
+            = f.fields_for :images do |image|
+              .js-file_group{"data-index" => "#{image.index}"}
+              = image.file_field :image
             %i.fas.fa-camera
               最大5枚までアップロードできます
           .form-group
@@ -22,18 +20,14 @@
             = f.text_field :restaurant_name , placeholder: "店名をお願いします。", class: "form-control", required: true
 
           .form-group
-            %label こだわり説明
-            = f.text_area :describe, rows: 6, placeholder: "内容記載お願いします。", class: "form-control", required: true
+            %label 店説明  メニュー概要
+            = f.text_area :describe, rows: 6, placeholder: "例)内装が綺麗で料理も美味しかった。ランチセットが800円", class: "form-control", required: true
           
           
             .form-group
               %label ジャンル
               = f.text_field :genre, class: "form-control"
               -# = f.collection_select :restaurant_id, @restaurant, :name, :name, prompt: "--"
-          
-            .form-group
-            %label メニュー概要
-            = f.text_area :describe, rows: 6, placeholder: "メニュー記載お願いします。", class: "form-control", required: true
 
             %label 住所
             = f.text_field :address, placeholder: "住所は?", class: "form-control"

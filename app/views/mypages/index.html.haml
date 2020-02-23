@@ -1,1 +1,25 @@
-= render 'mypages/left_mypages'
+= render 'shared/header'
+.row
+  .col-md-3
+    %ul.sidebar-list
+      %li.sidebar-item= link_to "レストラン登録", new_restaurant_path,  class: "sidebar-link active"
+      %li.sidebar-item= link_to "レストラン登録履歴", new_restaurant_path,  class: "sidebar-link active"
+      %li.sidebar-item= link_to "予約する", new_restaurant_path,  class: "sidebar-link active"
+      %li.sidebar-item= link_to "予約履歴", new_restaurant_path,  class: "sidebar-link active"
+      %li.sidebar-item= link_to "レビューを書く", new_restaurant_path,  class: "sidebar-link active"
+  .col-md-9
+    .panel.panel-default
+      .panel-heading
+        Listings
+      .panel-body
+        - @restaurant.each do |r|
+          .row
+            .col-md-2
+              = link_to restaurants_path(r.id) do
+                = image_tag r.images[0].image.url, class: "pro_pic"
+
+            .col-md-7
+              = r.restaurant_name
+            .col-md-3.right
+              -# = link_to "Update", listing_room_path(room), class: "btn btn-form"
+          %hr/

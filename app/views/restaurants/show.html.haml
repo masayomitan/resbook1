@@ -1,0 +1,51 @@
+
+= render 'shared/header'
+
+.restaurant-show
+  .restaurant-show-name
+    = @restaurant.restaurant_name
+  .restaurant-show-name-content
+    %ul
+    .restaurant-show-name-content-1
+    %li.fas.fa-map-marker-alt
+    = @restaurant.address
+    
+    .restaurant-show-name-content-2
+    %li.fas.fa-phone
+    = @restaurant.tel
+
+    .restaurant-show-name-content-2
+    %li.fas.fa-utensils
+    = @restaurant.genre
+    
+    .restaurant-show-name-content-horiday
+      定休日
+      = @restaurant.horiday
+
+  .restaurant-show-name-content-pics
+    = image_tag @restaurant.images[0].image.url, class: "pro_pic", width: "50%"
+      - @restaurant.images.each do |i|
+
+  .restaurant-show-name-content-list
+    %li  概要　メニュー
+  .restaurant-show-name-content-describe
+    = @restaurant.describe
+
+  .restaurant-show-name-content-list
+    %li 平均価格
+  .restaurant-show-name-content-price
+    %i.fas.fa-sun
+    = number_to_currency(@restaurant.average_price_lunch, unit: "￥",precision: 0)
+    .restaurant-show-name-content-2
+    %i.fas.fa-moon
+    = number_to_currency(@restaurant.average_price_dinner, unit: "￥",precision: 0)
+  .restaurant-show-name-content-other
+    %ul.restaurant-show-name-content-other
+      %li{:class => "#{'text-line-through' if !@restaurant.cards}"} クレジットカード
+      %li{:class => "#{'text-line-through' if !@restaurant.parking}"} 駐車場
+      %li{:class => "#{'text-line-through' if !@restaurant.all_you_can_eat}"} 食べ放題
+      %li{:class => "#{'text-line-through' if !@restaurant.all_you_can_drink}"} 飲み放題
+      %li{:class => "#{'text-line-through' if !@restaurant.private_room}"} 個室
+      %li{:class => "#{'text-line-through' if !@restaurant.party}"} 宴会
+      %li{:class => "#{'text-line-through' if !@restaurant.takeout}"} お持ち帰り
+    
