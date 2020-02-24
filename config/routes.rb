@@ -14,6 +14,7 @@ Rails.application.routes.draw do
       get 'other'
     end
     resources :images, only: [:create, :destroy]
+    resources :reservations, only: [:new, :create]
   end
 
   resources :mypages

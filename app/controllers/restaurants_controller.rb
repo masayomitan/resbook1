@@ -33,14 +33,13 @@ class RestaurantsController < ApplicationController
   def update
 
     new_params = restaurant_params
-    # new_params = restaurant_params.merge(active: true) if is_ready_room
     
     if @restaurant.update(new_params)
       redirect_to restaurant_path(@restaurant), notice: "Saved..."
     else
       flash[:alert] = "Something went wrong..."
     end
-    render :index
+      return :new
   end
 
 
@@ -53,10 +52,6 @@ class RestaurantsController < ApplicationController
 
   def is_authorised
     redirect_to root_path, alert: "You don't have permission" unless current_user.id == @restaurant.user_id
-  end
-
-  def is_ready_room
-    !@restaurant.active && !@restaurant.time.blank? && !@restaurant.listing_other.blank?
   end
 
   def restaurant_params

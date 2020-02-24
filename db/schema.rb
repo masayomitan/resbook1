@@ -23,10 +23,8 @@ ActiveRecord::Schema.define(version: 2020_02_23_053645) do
   create_table "reservations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "restaurant_id", null: false
-    t.datetime "start_date"
-    t.datetime "end_date"
-    t.time "start_time"
-    t.time "end_time"
+    t.date "date"
+    t.time "time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["restaurant_id"], name: "index_reservations_on_restaurant_id"

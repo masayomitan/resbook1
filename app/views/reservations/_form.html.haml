@@ -1,0 +1,9 @@
+.restaurant-show-name-content-box-reserve
+  = form_for([@restaurant, @restaurant.reservations.new]) do  |r|
+    = r.hidden_field :restaurant_id, value: @restaurant.id
+    %label 日付
+    = r.date_select :date
+    %label 時間
+    = r.datetime_select :time
+    
+    = r.submit "予定に入れる"

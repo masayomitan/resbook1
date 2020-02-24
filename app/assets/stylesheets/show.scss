@@ -1,6 +1,9 @@
 
 .restaurant-show{
-  margin-left: 200px;
+  margin: 0 250px;
+  background-color: #E6E6E6;
+
+
 }
 .restaurant-show-name {
   margin-left: 20px;
@@ -16,17 +19,33 @@
 }
 .restaurant-show-name-content-2{
   display: inline-block;  
-  width: 10px;       
+  width: 15px;       
+}
+
+.restaurant-show-name-content-3{
+  display: inline-block;   
+  margin:0 0 0 50px;    
 }
 
 .restaurant-show-name-content-pics{
   width: 600px;
   height: 450px;
+  margin-left: 20px;
+}
+
+.restaurant-show-name-content-menu{
+  font-weight:800;
+  font-size: 15px;
+  width: 300px;
+}
+.restaurant-show-name-content-describe{
+  width: 300px;
 }
 
 .restaurant-show-name-content-list{
   font-weight:800;
   font-size: 15px;
+  width: 300px;
 }
 
 .restaurant-show-name-content-describe{
@@ -38,6 +57,10 @@
   margin-left: 3px;
 }
 .restaurant-show-name-content-other {
+  display: flex; 
+  justify-content: left;
+  margin: 30px;
+
 }
 
 .restaurant-show-name-content-other li {
@@ -53,10 +76,8 @@
   font-size: 14px;
 }
 
-.restaurant-show-name-content-map{
-  display: flex; 
-}
 .h2{
   font-weight: bold;
   }
 
+  
