@@ -1,19 +1,17 @@
-.header
-  .pcHeader-headerInner
-    .pcHeader-headerInner_mainHeader
-    = link_to "Restaurant Book", root_path, class: "navbar-brand"
-    .pcHeader-headerInner_mainHeader_submit
-      %input.submit{type: "submit",value:"", class: "form__submit"}
-
-  
-      - if user_signed_in?
-        %h2 名前： #{current_user.name}
-        = link_to "ログアウト", destroy_user_session_path, method: :delete
-
-        %ul
-        %li= link_to "レストラン登録", new_restaurant_path
-        
-      - else
-        %h2 現在ログインしていません
-        = link_to "ログイン", new_user_session_path, class: 'post'
-        = link_to "新規登録", new_user_registration_path, class: 'post'
+#header
+  %h1
+    %a= link_to "Restaurants", root_path, class: "mainHeader"
+/ メインメニュー
+%ul#menu
+  %li#menu01
+    = link_to "レストラン登録", new_restaurant_path
+  %li#menu02
+    = link_to "マイページ"
+  %li#menu03
+    - if user_signed_in?
+      #{current_user.name}さん
+      = link_to "ログアウト", destroy_user_session_path, method: :delete
+    - else
+      現在ログインしていません
+      = link_to "ログイン", new_user_session_path
+      = link_to "新規登録", new_user_registration_path
