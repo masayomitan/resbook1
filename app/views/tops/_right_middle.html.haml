@@ -11,24 +11,14 @@
       %li.coverpage_dinner_list_box
         .coverpage_dinner_list_box_name
           = o.restaurant_name
-          .coverpage_dinner_list_box_address
-            = o.address
-            .coverpage_dinner_list_box_genre
-              = o.genre_id
-
-  .coverpage_midlle_price_list
-    %p.price1
-      price1
-    %p.price2
-      price2
-    %p.price3
-      price3
-  .coverpage_genre_list
-    %p.genre1
-      genre1
-    %p.genre1
-      genre1
-    %p.genre1
-      genre1
-  .coverpage_top_restaurants_list
-    to
+        .coverpage_dinner_list_box_address
+          = o.address
+          .coverpage_dinner_list_box_genre
+            %i.fas.fa-utensils
+            = o.genre.name
+          .coverpage_dinner_list_box_describe
+            %i.fas.fa-comments
+              = o.describe
+      
+  .seeya
+   
