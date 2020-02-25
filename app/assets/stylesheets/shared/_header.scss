@@ -1,0 +1,45 @@
+#header {
+  height:77px;
+  font-size: 35px;
+  padding: 20px 0 0 100px;
+  border-bottom: 1px solid black;
+}
+h1 {
+	padding:20px 0px 0px 30px;	
+	font-family:Arial, Helvetica, sans-serif;
+}
+h1 a {text-decoration:none;} 		
+
+ul#menu {
+  height:60px;
+  background-color:#eeeeee;
+  font-weight:bold;
+  padding-left: 400px;
+}
+li#menu01,li#menu02,li#menu03,li#menu04,li#menu05 {
+  font-size: 20px;
+  float:left;			/*リスト項目を横に並べる*/
+	display:inline;			/*リスト項目をインライン表示にする*/
+	list-style-type:none;		/*リストマーカー無しにする*/
+	background-repeat:no-repeat; 	/*背景画像を繰り返さない*/	
+}
+
+
+li#menu01 {
+	width:164px; height:42px;	/*背景画像に合わせたサイズ指定*/
+	
+}
+li#menu02 {
+	width:156px; height:42px;	/*背景画像に合わせたサイズ指定*/
+	
+}
+li#menu03 {
+	width:300px; height:42px;	/*背景画像に合わせたサイズ指定*/
+
+}
+ul#menu a {
+	display:block;				/*リンクをブロック表示にする*/
+	height:42px; padding-top:4px; text-align:center;
+	text-decoration:none; 			/*リンクの下線を無くす*/
+	font-family:Arial, Helvetica, sans-serif;	/*フォントの種類*/
+}

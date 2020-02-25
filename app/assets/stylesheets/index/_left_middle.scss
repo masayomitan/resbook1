@@ -1,6 +1,28 @@
-.wrapper_left_box{
-  background-color: green;
-  height : 1000px;
-  width: 15%;
-  float: left;
+  .wrapper_left_box{
+
+    background-color: #3CCACE;
+    height : 500px;
+    width: 20%;
+    float: left;
+    margin-left: 180px;
+    margin-TOP:50px;
+  }
+
+.review_info{
+  font-size: 30px;
+  text-align: center;
+  margin: 50px;
+}
+
+.price_info{
+  font-size: 30px;
+  text-align: center;
+  margin: 50px;
+
+}
+
+.genre_info{
+  font-size: 30px;
+  text-align: center;
+  margin: 50px;
 }

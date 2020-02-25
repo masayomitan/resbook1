@@ -1,27 +1,24 @@
 .welcome_message
-  welcome
+  お店一覧
 .coverpage_list
   
   .coverpage_dinner_list
-    %p.dinner1
-      dinner1
-    %p.dinner2
-      dinner2
-    %p.dinner3
-      dinner3
-  .coverpage_midlle_price_list
-    %p.price1
-      price1
-    %p.price2
-      price2
-    %p.price3
-      price3
-  .coverpage_genre_list
-    %p.genre1
-      genre1
-    %p.genre1
-      genre1
-    %p.genre1
-      genre1
-  .coverpage_top_restaurants_list
-    top
+    
+    - @restaurant.zip(@image) do |o,i|
+      %ul
+      = link_to restaurant_path(o.id) do
+        = image_tag i.image.url, class:"dinner_pics"
+      %li.coverpage_dinner_list_box
+        .coverpage_dinner_list_box_name
+          = o.restaurant_name
+        .coverpage_dinner_list_box_address
+          = o.address
+          .coverpage_dinner_list_box_genre
+            %i.fas.fa-utensils
+            = o.genre.name
+          .coverpage_dinner_list_box_describe
+            %i.fas.fa-comments
+              = o.describe
+      
+  .seeya
+   

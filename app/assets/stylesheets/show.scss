@@ -37,15 +37,17 @@
   font-weight:800;
   font-size: 15px;
   width: 300px;
+  &_describe{
+    width: 270px;
+  }
 }
-.restaurant-show-name-content-describe{
-  width: 300px;
-}
+
 
 .restaurant-show-name-content-list{
   font-weight:800;
   font-size: 15px;
   width: 300px;
+  text-align: center;
 }
 
 .restaurant-show-name-content-describe{
@@ -76,8 +78,6 @@
   font-size: 14px;
 }
 
-.h2{
-  font-weight: bold;
-  }
-
-  
+.restaurant-show-name-content-box{
+  margin-bottom: 20px;
+}
