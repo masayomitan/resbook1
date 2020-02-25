@@ -1,0 +1,26 @@
+.review
+  = form_for @review do |f|
+    = f.hidden_field :restaurant_id, value: @restaurant.id
+    = f.text_field :comment, class: "text-field"
+    = f.submit '投稿', class: "submit-btn"
+
+    - @reviews.each do |r|
+      = r.comment
+
+
+:javascript
+  $('#stars').raty({
+    path: '/assets',
+    scoreName: 'review[star]',
+    score: 1
+  });
+
+  :javascript
+  $('#star').raty({
+    size     : 36,
+    starOff:  '#{asset_path('off.png')}',
+    starOn : '#{asset_path('on.png')}',
+    starHalf: '#{asset_path('half.png')}',
+    scoreName: 'post[rate]',
+    half: true,
+  });

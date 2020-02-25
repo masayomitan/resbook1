@@ -7,6 +7,8 @@ class Restaurant < ApplicationRecord
   has_many :images, foreign_key: :restaurant_id, dependent: :destroy
   has_many :reservations
 
+  has_many :reviews
+
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
 

@@ -70,5 +70,6 @@ gem "toastr-rails"
 gem 'carrierwave'
 gem 'mini_magick'
 
+gem 'ratyrate'
 gem 'jquery-rails' 
 gem 'jquery-ui-rails'
