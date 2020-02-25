@@ -3,13 +3,18 @@
 .coverpage_list
   
   .coverpage_dinner_list
-    %ul
+    
     - @restaurant.zip(@image) do |o,i|
-      %li
+      %ul
       = link_to restaurant_path(o.id) do
-        = image_tag i.image.url, class:"dinner1"
-        %li.pro_name
+        = image_tag i.image.url, class:"dinner_pics"
+      %li.coverpage_dinner_list_box
+        .coverpage_dinner_list_box_name
           = o.restaurant_name
+          .coverpage_dinner_list_box_address
+            = o.address
+            .coverpage_dinner_list_box_genre
+              = o.genre_id
 
   .coverpage_midlle_price_list
     %p.price1
