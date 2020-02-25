@@ -40,7 +40,7 @@
   .restaurant-show-name-content-other
     .restaurant-show-name-content-menu
       概要　メニュー
-      .restaurant-show-name-content-describe
+      .restaurant-show-name-content-menu_describe
         = @restaurant.describe
     %ul.restaurant-show-name-content-list
       %li その他情報
@@ -52,7 +52,7 @@
       %li{:class => "#{'text-line-through' if !@restaurant.party}"} 宴会
       %li{:class => "#{'text-line-through' if !@restaurant.takeout}"} お持ち帰り
     .restaurant-show-name-content-box
-      #map{:style => "width: 300px; height: 300px"}
+      #map{:style => "width: 350px; height: 350px"}
         :javascript
           $(document).on('turbolinks:load', function initialize() { 
               var location = {lat: #{@restaurant.latitude}, lng: #{@restaurant.longitude}};
