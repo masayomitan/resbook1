@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  post '/rate' => 'rater#create', :as => 'rate'
   devise_for :users, :controllers => {
   :registrations => 'users/registrations',
   :sessions => 'users/sessions'   
@@ -17,7 +16,7 @@ Rails.application.routes.draw do
     resources :images, only: [:create, :destroy]
     resources :reservations, only: [:new, :create]
   end
-  
+
   resources :reviews
   resources :mypages
 

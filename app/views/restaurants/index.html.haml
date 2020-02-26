@@ -19,5 +19,4 @@
                   = r.restaurant_name
               .restaurant-index-descripition
                 = r.address
-                -# = link_to "Update", listing_room_path(room), class: "btn btn-form"
-          %hr/
+                = link_to "削除", restaurant_path(r.id), method: :delete

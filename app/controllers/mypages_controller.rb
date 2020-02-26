@@ -12,6 +12,7 @@ class MypagesController < ApplicationController
   end
 
 
+
   def set_reataurant
     @restaurants = Restaurant.find(params[:id])
   end

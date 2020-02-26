@@ -17,12 +17,13 @@ class RestaurantsController < ApplicationController
   def create
     @restaurant = Restaurant.new(restaurant_params)
     if @restaurant.save
-      redirect_to other_restaurant_path(@restaurant), notice: "Saved..."
+      redirect_to other_restaurant_path(@restaurant), notice: "保存しました！"
     else
       flash[:alert] = "Something went wrong..."
       render :new
     end
   end
+  
 
   def show
     @review = Review.new
@@ -30,6 +31,8 @@ class RestaurantsController < ApplicationController
   end
 
   def edit
+    @images = Image.find(params[:id])
+    4.times { @restaurant.images.new }
   end
 
   def update
@@ -37,12 +40,22 @@ class RestaurantsController < ApplicationController
     new_params = restaurant_params
     
     if @restaurant.update(new_params)
-      redirect_to restaurant_path(@restaurant), notice: "Saved..."
+      redirect_to restaurant_path(@restaurant), notice: "保存しました！"
     else
       flash[:alert] = "Something went wrong..."
     end
       return :new
   end
+
+  def destroy
+    if user_signed_in? && @restaurant.user_id == current_user.id
+      @restaurant.destroy
+      redirect_to mypages_path, notice: "削除しました！"
+    else
+      redirect_to mypages_path
+    end
+  end
+
 
 
   private

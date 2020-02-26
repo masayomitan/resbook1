@@ -7,14 +7,14 @@ class Restaurant < ApplicationRecord
   has_many :images, foreign_key: :restaurant_id, dependent: :destroy
   has_many :reservations
 
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
 
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
 
 
   validates :restaurant_name,   presence: true
-  validates :describe, presence: true
+  validates :describe, presence: true, length: { in: 1..800 }
   validates :address,                  null: false
   validates :tel,                      null: false
   validates :average_price_lunch,      null: false

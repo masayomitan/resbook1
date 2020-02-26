@@ -18,19 +18,17 @@
     %li.fas.fa-utensils
     = @restaurant.genre.name
     
-    .restaurant-show-name-content-3
-      平均
-      %li.fas.fa-sun
-      = number_to_currency(@restaurant.average_price_lunch, unit: "￥",precision: 0)
-      .restaurant-show-name-content-2
-      %li.fas.fa-moon
-      = number_to_currency(@restaurant.average_price_dinner, unit: "￥",precision: 0)
-
-    
     .restaurant-show-name-content-horiday
       定休日
-    = @restaurant.horiday_id
+      = @restaurant.horiday_id
     
+      .restaurant-show-name-content-3
+        %li.fas.fa-sun
+        = number_to_currency(@restaurant.average_price_lunch, unit: "￥",precision: 0)
+        .restaurant-show-name-content-2
+        %li.fas.fa-moon
+        = number_to_currency(@restaurant.average_price_dinner, unit: "￥",precision: 0)
+      
 
   .restaurant-show-name-content-pics
     = image_tag @restaurant.images[0].image.url, width: "100%", height: "100%"
@@ -38,36 +36,43 @@
 
   
   .restaurant-show-name-content-other
-    .restaurant-show-name-content-menu
-      概要　メニュー
-      .restaurant-show-name-content-menu_describe
-        = @restaurant.describe
-    %ul.restaurant-show-name-content-list
-      %li その他情報
-      %li{:class => "#{'text-line-through' if !@restaurant.cards}"} クレジットカード
-      %li{:class => "#{'text-line-through' if !@restaurant.parking}"} 駐車場
-      %li{:class => "#{'text-line-through' if !@restaurant.all_you_can_eat}"} 食べ放題
-      %li{:class => "#{'text-line-through' if !@restaurant.all_you_can_drink}"} 飲み放題
-      %li{:class => "#{'text-line-through' if !@restaurant.private_room}"} 個室
-      %li{:class => "#{'text-line-through' if !@restaurant.party}"} 宴会
-      %li{:class => "#{'text-line-through' if !@restaurant.takeout}"} お持ち帰り
-    .restaurant-show-name-content-box
-      #map{:style => "width: 350px; height: 350px"}
-        :javascript
-          $(document).on('turbolinks:load', function initialize() { 
-              var location = {lat: #{@restaurant.latitude}, lng: #{@restaurant.longitude}};
-              var map = new google.maps.Map(document.getElementById('map'), {
-                center: location,
-                zoom: 14
+  .restaurant-show-name-content-menu
+    概要　メニュー
+    .restaurant-show-name-content-menu_describe
+      = @restaurant.describe
+
+
+    
+    .restaurant-show-name-content-menu_other  
+      その他情報
+      .restaurant-show-menu_other_map
+        %ul.restaurant-show-name-content-list
+          %li{:class => "#{'text-line-through' if !@restaurant.cards}"} クレジットカード
+          %li{:class => "#{'text-line-through' if !@restaurant.parking}"} 駐車場
+          %li{:class => "#{'text-line-through' if !@restaurant.all_you_can_eat}"} 食べ放題
+          %li{:class => "#{'text-line-through' if !@restaurant.all_you_can_drink}"} 飲み放題
+          %li{:class => "#{'text-line-through' if !@restaurant.private_room}"} 個室
+          %li{:class => "#{'text-line-through' if !@restaurant.party}"} 宴会
+          %li{:class => "#{'text-line-through' if !@restaurant.takeout}"} お持ち帰り
+        .restaurant-show-name-content-map
+          #map{:style => "width: 550px; height: 330px"}
+            :javascript
+              $(document).on('turbolinks:load', function initialize() { 
+                  var location = {lat: #{@restaurant.latitude}, lng: #{@restaurant.longitude}};
+                  var map = new google.maps.Map(document.getElementById('map'), {
+                    center: location,
+                    zoom: 14
+                  });
+                  var marker = new google.maps.Marker({
+                    position: location,
+                    map: map
+                  });
+                  google.maps.event.addDomListener(window, 'load', initialize);
+                  
               });
-              var marker = new google.maps.Marker({
-                position: location,
-                map: map
-              });
-              google.maps.event.addDomListener(window, 'load', initialize);
-          });
+
+
 = render 'review/new'
 
-
-
 = render 'reservations/form'
+
