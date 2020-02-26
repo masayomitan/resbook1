@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     resources :reservations, only: [:new, :create]
   end
 
+  resources :reviews
   resources :mypages
 
 end

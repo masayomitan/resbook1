@@ -1,0 +1,30 @@
+
+.review
+  = form_for @review do |f|
+    = f.hidden_field :restaurant_id, value: @restaurant.id
+    = f.text_field :comment, class: "text-field"
+
+    #star
+    = f.label :raty,'評価 '
+    = f.hidden_field :star, id: :reviews
+
+    :javascript
+      $(document).ready(function() {
+        $('#star').raty({
+          size     :      36,
+          starOff:  '#{asset_path('star-off.png')}',
+          starOn:  '#{asset_path('star-on.png')}',
+          starHalf: '#{asset_path('star-half.png')}',
+          scoreName: 'review[star]',
+          half: true,
+        });
+      });
+    = f.submit '評価する', class: "submit-btn"
+
+.review-text
+  .review-text-box
+  .review-text-name
+    - @reviews.each do |r|
+      = r.user.name
+      .review-text-comment
+        = r.comment

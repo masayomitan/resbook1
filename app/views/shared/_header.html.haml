@@ -1,17 +1,10 @@
 #header
-  %h1
-    %a= link_to "Restaurants", root_path, class: "mainHeader"
-/ メインメニュー
-%ul#menu
-  %li#menu01
-    = link_to "レストラン登録", new_restaurant_path
-  %li#menu02
-    = link_to "マイページ"
-  %li#menu03
-    - if user_signed_in?
-      #{current_user.name}さん
-      = link_to "ログアウト", destroy_user_session_path, method: :delete
-    - else
-      現在ログインしていません
-      = link_to "ログイン", new_user_session_path
-      = link_to "新規登録", new_user_registration_path
+  .header_name
+    = link_to "Restaurants", root_path, class: "mainHeader"
+    .header_user
+      - if user_signed_in?
+        #{current_user.name}さん
+        = link_to "ログアウト", destroy_user_session_path, method: :delete
+      - else
+        = link_to "ログイン", new_user_session_path
+        = link_to "新規登録", new_user_registration_path
