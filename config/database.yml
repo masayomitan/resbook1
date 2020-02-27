@@ -58,5 +58,6 @@ test:
 production:
   <<: *default
   database: resbook_production
-  username: resbook
-  password: <%= ENV['RESBOOK_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
