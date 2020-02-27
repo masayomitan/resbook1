@@ -4,9 +4,13 @@ class Restaurant < ApplicationRecord
   belongs_to_active_hash :genre
 
   belongs_to :user, optional: true
+  
+  
   has_many :images, foreign_key: :restaurant_id, dependent: :destroy
+  accepts_nested_attributes_for :images, allow_destroy: true
+  
+  
   has_many :reservations
-
   has_many :reviews, dependent: :destroy
 
   geocoded_by :address
@@ -20,10 +24,6 @@ class Restaurant < ApplicationRecord
   validates :average_price_lunch,      null: false
   validates :average_price_dinner,     null: false
   validates :genre,                    null: false
-
-
-  accepts_nested_attributes_for :images, allow_destroy: true
-  
 
   
 end

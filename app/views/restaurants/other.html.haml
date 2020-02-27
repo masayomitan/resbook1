@@ -38,8 +38,8 @@
             = f.check_box :all_you_can_eat
             食べ放題
           .col-md-4
-            定休日
-            = f.collection_check_boxes :horiday_id, Horiday.all, :id, :name, prompt: "--"
+            = f.check_box :holiday
+            祝日、日曜日営業
 
           .col-md-4
           .row.form-group

@@ -8,7 +8,6 @@ class CreateRestaurants < ActiveRecord::Migration[6.0]
       t.integer    :average_price_lunch,      null: false
       t.integer    :average_price_dinner,     null: false
       t.integer    :genre_id,                 null: false
-      t.integer    :horiday_id
       
       t.boolean :cards
       t.boolean :parking
@@ -19,6 +18,8 @@ class CreateRestaurants < ActiveRecord::Migration[6.0]
       t.boolean :private_room
       t.boolean :party
       t.boolean :takeout
+      t.boolean :holiday  
+      
       
       t.references :user, foreign_key: true
       t.timestamps

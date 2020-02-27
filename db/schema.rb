@@ -39,7 +39,6 @@ ActiveRecord::Schema.define(version: 2020_02_25_062531) do
     t.integer "average_price_lunch", null: false
     t.integer "average_price_dinner", null: false
     t.integer "genre_id", null: false
-    t.integer "horiday_id"
     t.boolean "cards"
     t.boolean "parking"
     t.boolean "all_you_can_eat"
@@ -49,6 +48,7 @@ ActiveRecord::Schema.define(version: 2020_02_25_062531) do
     t.boolean "private_room"
     t.boolean "party"
     t.boolean "takeout"
+    t.boolean "holiday"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

@@ -10,6 +10,7 @@ class RestaurantsController < ApplicationController
   def new
     @restaurant = Restaurant.new
     @restaurant.images.new
+    # @restaurant.holidays.new
     4.times { @restaurant.images.new }
     
   end
@@ -17,7 +18,7 @@ class RestaurantsController < ApplicationController
   def create
     @restaurant = Restaurant.new(restaurant_params)
     if @restaurant.save
-      redirect_to other_restaurant_path(@restaurant), notice: "保存しました！"
+      redirect_to other_restaurant_path(@restaurant), notice: "他の情報を入力してください！"
     else
       flash[:alert] = "Something went wrong..."
       render :new
@@ -33,15 +34,15 @@ class RestaurantsController < ApplicationController
   def edit
     @images = Image.find(params[:id])
     4.times { @restaurant.images.new }
+    
   end
 
   def update
-    binding.pry
-    new_params = restaurant_params
-    if @restaurant.update(new_params)
+    
+    if @restaurant.update(restaurant_params)
       redirect_to restaurant_path(@restaurant), notice: "保存しました！"
     else
-      flash[:alert] = "Something went wrong..."
+      flash[:alert] = "間違えてる？"
     end
       return :new
   end
@@ -69,8 +70,10 @@ class RestaurantsController < ApplicationController
   end
 
   def restaurant_params
-    params.require(:restaurant).permit(:restaurant_name, :describe, :address, :tel, :average_price_lunch, :average_price_dinner, :genre_id, :horiday_id, :drink,
-      :cards, :parking, :all_you_can_eat, :all_you_can_drink, :tobacco, :free_wifi, :private_room, :party, :takeout,
-      images_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id)
+    params.require(:restaurant).permit(:restaurant_name, :describe, :address, :tel, :average_price_lunch, :average_price_dinner, :genre_id,
+      :cards, :parking, :all_you_can_eat, :all_you_can_drink, :tobacco, :free_wifi, :private_room, :party, :takeout,:holiday,
+      images_attributes: [:image, :_destroy, :id])
+      .merge(user_id: current_user.id)
   end
+
 end

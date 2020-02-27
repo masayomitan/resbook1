@@ -20,7 +20,7 @@
     
     .restaurant-show-name-content-horiday
       定休日
-      = @restaurant.horiday_id
+      -# = @restaurant.holiday.name
     
       .restaurant-show-name-content-3
         %li.fas.fa-sun
@@ -49,11 +49,14 @@
         %ul.restaurant-show-name-content-list
           %li{:class => "#{'text-line-through' if !@restaurant.cards}"} クレジットカード
           %li{:class => "#{'text-line-through' if !@restaurant.parking}"} 駐車場
+          %li{:class => "#{'text-line-through' if !@restaurant.tobacco}"} タバコ
+          %li{:class => "#{'text-line-through' if !@restaurant.free_wifi}"} フリーwifi
+          %li{:class => "#{'text-line-through' if !@restaurant.takeout}"} お持ち帰り
           %li{:class => "#{'text-line-through' if !@restaurant.all_you_can_eat}"} 食べ放題
           %li{:class => "#{'text-line-through' if !@restaurant.all_you_can_drink}"} 飲み放題
           %li{:class => "#{'text-line-through' if !@restaurant.private_room}"} 個室
           %li{:class => "#{'text-line-through' if !@restaurant.party}"} 宴会
-          %li{:class => "#{'text-line-through' if !@restaurant.takeout}"} お持ち帰り
+          %li{:class => "#{'text-line-through' if !@restaurant.holiday}"} 祝日、日曜日営業
         .restaurant-show-name-content-map
           #map{:style => "width: 550px; height: 330px"}
             :javascript
