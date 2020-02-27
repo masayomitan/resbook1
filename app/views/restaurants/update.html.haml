@@ -1,0 +1,17 @@
+.col-md-4
+            %ul 定休日
+            = f.fields_for :holidays do |h|
+              %li 日曜日
+              = h.check_box :sunday
+              %li 月曜日
+              = h.check_box :monday
+              %li 火曜日
+              = h.check_box :tuesday
+              %li 水曜日
+              = h.check_box :wednesday
+              %li 木曜日
+              = h.check_box :thursday
+              %li 金曜日
+              = h.check_box :friday
+              %li 土曜日
+              = h.check_box :saturday
