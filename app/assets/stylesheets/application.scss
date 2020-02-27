@@ -2,14 +2,16 @@
 @import "bootstrap";
 @import "toastr";
 
-@import "index/right_middle";
-@import "index/left_middle";
+@import "index/top";
+
 @import "shared/header";
 @import "shared/footer";
 @import "devise";
 @import "restaurant";
 @import "show";
 @import "reset";
+@import "new";
+
 
 @import "jquery.raty";
 

@@ -36,9 +36,8 @@ class RestaurantsController < ApplicationController
   end
 
   def update
-
+    binding.pry
     new_params = restaurant_params
-    
     if @restaurant.update(new_params)
       redirect_to restaurant_path(@restaurant), notice: "保存しました！"
     else

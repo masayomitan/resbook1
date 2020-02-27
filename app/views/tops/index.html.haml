@@ -1,6 +1,28 @@
 = render 'shared/header'
-= render 'left_middle'
-= render 'right_middle'
+.welcome_message
+  お店一覧
+.coverpage_list
+  
+  .coverpage_dinner_list
+    - @restaurant.zip(@image) do |o,i|
+      %ul
+      = link_to restaurant_path(o.id) do
+        = image_tag i.image.url, class:"dinner_pics"
+      .coverpage_dinner_list_box
+        .coverpage_dinner_list_box_name
+          = o.restaurant_name
+        .coverpage_dinner_list_box_address
+          = o.address
+          .coverpage_dinner_list_box_genre
+            %i.fas.fa-utensils
+            = o.genre.name
+          .coverpage_dinner_list_box_describe
+            %i.fas.fa-comments
+            -# - @restaurant.each do |r|
+              = r.user.reviews
+      
+  .seeya
+   
 
 = render 'shared/footer'
 

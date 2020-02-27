@@ -24,7 +24,7 @@
             = f.text_area :describe, rows: 6, placeholder: "例)内装が綺麗で料理も美味しかった。ランチセットが800円", class: "form-control", required: true
           
           
-            .form-group
+            .form-group_sel
               %label ジャンル
               = f.collection_select :genre_id, Genre.all, :id, :name, prompt: "--"
 
@@ -36,10 +36,10 @@
 
             .form-group-food
             %label ランチ価格帯
-            = f.number_field :average_price_lunch, placeholder: "料金入力", class: "form-control", step: "100"
+            = f.number_field :average_price_lunch, placeholder: "料金入力(100円ずつ)", class: "form-control_price", step: "100"
 
             %label ディナー価格帯
-            = f.number_field :average_price_dinner, placeholder: "料金入力", class: "form-control", step: "100"
+            = f.number_field :average_price_dinner, placeholder: "料金入力(100円ずつ)", class: "form-control_price", step: "100"
 
             
             

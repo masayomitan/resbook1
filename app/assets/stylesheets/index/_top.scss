@@ -1,46 +1,47 @@
 .welcome_message{
   background-color: #3CCACE;
-  width:700px;
   height: 100px;
-  margin-left: 530px;
+  width: 50%;
   text-align: center;
   line-height: 100px;
-  justify-content: space-between;
-  position: relative;
+  margin:0 auto;
   margin-TOP: 50px;
+  font-size: 50px;
   
   
 }
   
 
 .coverpage_list{
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 330px;
-
+background-color: #f2f2f2;
         .coverpage_dinner_list{
-            width: 700px;
-            margin-left: 200px;
-        
+            margin-top: 20px;
+            display: flex;
+            width: 100vw;
+            flex-direction: row;
+            flex-wrap: wrap;
+            
+          
+  
+          
         .dinner_pics{
+          margin:  20px 0 0 65px;  
+          display:inline-block; 
           height: 200px;
           width: 260px;
-          margin-left: 20px;
-          margin-top: 20px;
           background-color: blanchedalmond;
+       
         }
 
         .coverpage_dinner_list_box{
-          position: absolute;
+          background-color: white;
           margin: 20px 0 0 30px;
-          display: inline-block;
           height:200px;
-          width:400px;
+          width: 330px;
 
         &_name{
           font-weight: 800;
-          font-size: 30px;
+          font-size: 20px;
           margin-top: 10px;
         }
       
