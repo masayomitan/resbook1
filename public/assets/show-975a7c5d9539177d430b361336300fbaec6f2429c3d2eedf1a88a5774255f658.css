@@ -1,0 +1,126 @@
+/* line 2, app/assets/stylesheets/show.scss */
+.restaurant-show {
+  margin: 0 250px;
+}
+
+/* line 6, app/assets/stylesheets/show.scss */
+.restaurant-show-name {
+  background-color: #3CCACE;
+  margin: 20px 320px 0 20px;
+  font-size: 35px;
+  font-weight: 800;
+  width: 900px;
+}
+
+/* line 14, app/assets/stylesheets/show.scss */
+.restaurant-show-name-content {
+  margin-left: 20px;
+  margin-right: 320px;
+  background-color: #edf1ed;
+  width: 900px;
+  font-size: 20px;
+}
+
+/* line 23, app/assets/stylesheets/show.scss */
+.restaurant-show-name-content-1 {
+  display: inline-block;
+}
+
+/* line 26, app/assets/stylesheets/show.scss */
+.restaurant-show-name-content-2 {
+  display: inline-block;
+  width: 15px;
+}
+
+/* line 31, app/assets/stylesheets/show.scss */
+.restaurant-show-name-content-3 {
+  display: inline-block;
+  margin: 0 0 0 600px;
+}
+
+/* line 39, app/assets/stylesheets/show.scss */
+.restaurant-show-name-content-horiday {
+  margin-left: 3px;
+}
+
+/* line 43, app/assets/stylesheets/show.scss */
+.restaurant-show-name-content-pics {
+  width: 600px;
+  height: 450px;
+  margin-left: 20px;
+}
+
+/* line 49, app/assets/stylesheets/show.scss */
+.restaurant-show-name-content-other {
+  display: flex;
+  justify-content: left;
+  margin: 30px;
+}
+
+/* line 56, app/assets/stylesheets/show.scss */
+.restaurant-show-name-content-menu {
+  font-weight: 800;
+  font-size: 15px;
+  width: 300px;
+}
+
+/* line 60, app/assets/stylesheets/show.scss */
+.restaurant-show-name-content-menu_describe {
+  background-color: #edf1ed;
+  width: 900px;
+  height: 330px;
+  margin: 15px;
+}
+
+/* line 69, app/assets/stylesheets/show.scss */
+.restaurant-show-name-content-describe {
+  width: 600px;
+}
+
+/* line 77, app/assets/stylesheets/show.scss */
+.restaurant-show-menu_other_map {
+  width: 900px;
+  margin-left: 20px;
+  list-style-type: none;
+}
+
+/* line 83, app/assets/stylesheets/show.scss */
+.restaurant-show-name-content-menu_other {
+  font-weight: 800;
+  font-size: 15px;
+  text-align: center;
+}
+
+/* line 89, app/assets/stylesheets/show.scss */
+.restaurant-show-name-content-list {
+  height: 330px;
+  padding: 5px 0 0 5px;
+  margin: 0 5px 0 0;
+  background-color: #edf1ed;
+  font-weight: 800;
+  font-size: 15px;
+  width: 300px;
+  text-align: center;
+  display: inline-block;
+  float: left;
+}
+
+/* line 103, app/assets/stylesheets/show.scss */
+.restaurant-show-name-content-list li {
+  margin-bottom: 10px;
+  font-size: 16px;
+  list-style-type: none;
+}
+
+/* line 110, app/assets/stylesheets/show.scss */
+.restaurant-show-name-content-list .text-line-through {
+  text-decoration: line-through;
+  color: rgba(0, 0, 0, 0.45);
+  font-size: 14px;
+}
+
+/* line 117, app/assets/stylesheets/show.scss */
+.restaurant-show-name-content-map {
+  margin-left: 35px;
+  display: inline-block;
+}

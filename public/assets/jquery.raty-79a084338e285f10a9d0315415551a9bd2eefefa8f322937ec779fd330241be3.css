@@ -1,0 +1,53 @@
+/* line 1, app/assets/stylesheets/jquery.raty.scss */
+.cancel-on-png, .cancel-off-png, .star-on-png, .star-off-png, .star-half-png {
+  font-size: 2em;
+}
+
+@font-face {
+  font-family: "raty";
+  font-style: normal;
+  font-weight: normal;
+  src: url("./fonts/raty.eot");
+  src: url("./fonts/raty.eot?#iefix") format("embedded-opentype");
+  src: url("./fonts/raty.svg#raty") format("svg");
+  src: url("./fonts/raty.ttf") format("truetype");
+  src: url("./fonts/raty.woff") format("woff");
+}
+
+/* line 16, app/assets/stylesheets/jquery.raty.scss */
+.cancel-on-png, .cancel-off-png, .star-on-png, .star-off-png, .star-half-png {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: "raty";
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
+  speak: none;
+  text-transform: none;
+}
+
+/* line 28, app/assets/stylesheets/jquery.raty.scss */
+.cancel-on-png:before {
+  content: "\e600";
+}
+
+/* line 32, app/assets/stylesheets/jquery.raty.scss */
+.cancel-off-png:before {
+  content: "\e601";
+}
+
+/* line 36, app/assets/stylesheets/jquery.raty.scss */
+.star-on-png:before {
+  content: "\f005";
+}
+
+/* line 40, app/assets/stylesheets/jquery.raty.scss */
+.star-off-png:before {
+  content: "\f006";
+}
+
+/* line 44, app/assets/stylesheets/jquery.raty.scss */
+.star-half-png:before {
+  content: "\f123";
+}

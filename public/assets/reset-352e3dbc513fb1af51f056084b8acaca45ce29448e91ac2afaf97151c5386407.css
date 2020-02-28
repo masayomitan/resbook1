@@ -1,0 +1,139 @@
+/*
+    TODO will need to remove settings on HTML since we can't namespace it.
+    TODO with the prefix, should I group by selector or property for weight savings?
+*/
+/* line 5, app/assets/stylesheets/reset.scss */
+html {
+  color: #000;
+  background: #FFF;
+}
+
+/*
+  TODO remove settings on BODY since we can't namespace it.
+*/
+/*
+  TODO test putting a class on HEAD.
+      - Fails on FF.
+*/
+/* line 16, app/assets/stylesheets/reset.scss */
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 44, app/assets/stylesheets/reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 48, app/assets/stylesheets/reset.scss */
+fieldset,
+img {
+  border: 0;
+}
+
+/*
+  TODO think about hanlding inheritence differently, maybe letting IE6 fail a bit...
+*/
+/* line 55, app/assets/stylesheets/reset.scss */
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+  font-style: normal;
+  font-weight: normal;
+}
+
+/* line 68, app/assets/stylesheets/reset.scss */
+ol,
+ul {
+  list-style: none;
+}
+
+/* line 73, app/assets/stylesheets/reset.scss */
+caption,
+th {
+  text-align: left;
+}
+
+/* line 77, app/assets/stylesheets/reset.scss */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+/* line 86, app/assets/stylesheets/reset.scss */
+q:before,
+q:after {
+  content: '';
+}
+
+/* line 90, app/assets/stylesheets/reset.scss */
+abbr,
+acronym {
+  border: 0;
+  font-variant: normal;
+}
+
+/* to preserve line-height and selector appearance */
+/* line 96, app/assets/stylesheets/reset.scss */
+sup {
+  vertical-align: text-top;
+}
+
+/* line 99, app/assets/stylesheets/reset.scss */
+sub {
+  vertical-align: text-bottom;
+}
+
+/* line 102, app/assets/stylesheets/reset.scss */
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  *font-size: 100%;
+  /*to enable resizing for IE*/
+}
+
+/*because legend doesn't inherit in IE */
+/* line 111, app/assets/stylesheets/reset.scss */
+legend {
+  color: #000;
+}
