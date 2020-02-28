@@ -4,11 +4,11 @@
 .review
   = form_for @review do |f|
     = f.hidden_field :restaurant_id, value: @restaurant.id
-    = f.text_field :comment, class: "text-field"
-
     #star
-    = f.label :star,'評価 '
-    = f.hidden_field :star, value: :star
+      = f.hidden_field :comment, id: :review_star
+    #comment
+      = f.text_field :comment, class: "text-field"
+    
 
     :javascript
       $(document).on('turbolinks:load', function() {
@@ -24,13 +24,16 @@
         });
       })
 
-    = f.submit '評価する', class: "submit-btn"
+    = f.submit 'コメント', class: "submit-btn"
 
 .review-text
   .review-text-box
-  .review-text-name
-    - @reviews.each do |r|
-      = r.user.name
-      .review-text-comment
-        = r.comment
-        = r.star
+    .review-text-box-1
+      - @reviews.each do |r|
+        .review-text-box-each
+          .review-text-box-name
+            = r.user.name
+          .review-text-comment
+            = r.comment
+          .review-text-comment
+            = r.star
