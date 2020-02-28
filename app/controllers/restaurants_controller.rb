@@ -4,7 +4,7 @@ class RestaurantsController < ApplicationController
   before_action :authenticate_user!, except: [:show]
 
   def index
-    @restaurant = Restaurant.all
+    @restaurant = Restaurant
   end
 
   def new
@@ -28,7 +28,7 @@ class RestaurantsController < ApplicationController
 
   def show
     @review = Review.new
-    @reviews = @restaurant.reviews
+    @reviews = @restaurant.reviews.order(created_at: :desc)
   end
 
   def edit

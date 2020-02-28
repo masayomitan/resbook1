@@ -1,9 +1,14 @@
 class ReviewsController < ApplicationController
 
+
   def create
     @review = Review.new(review_params)
-    @review.save
-    redirect_to   restaurant_path(@review.restaurant), notice: "レビューしました！"
+    if @review.save
+       redirect_to   restaurant_path(@review.restaurant), notice: "レビューしました！"
+    else
+      flash[:alert] = "両方入力してください"
+       redirect_back(fallback_location: root_path)
+    end
   end
 
 

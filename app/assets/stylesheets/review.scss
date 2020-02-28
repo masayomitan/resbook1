@@ -1,3 +1,88 @@
 .review{
-  height: 300px;
+  
+}
+
+.new_review{
+  width: 600px;
+  height: 200px;
+  display: inline-block;
+  margin: 30px 0 0 150px;
+}
+
+.star{
+  margin: 30px 0 0 150px;
+}
+
+#comment{
+  width: 600px;
+}
+
+.form-control_1{
+  border:0;
+  padding:10px;
+  font-size:1.3em;
+  font-family:Arial, sans-serif;
+  color:#aaa;
+  border:solid 1px #ccc;
+  margin:0 0 10px;
+  width: 450px;
+}
+
+.submit-btn{
+  background-color: gold;
+  font-size: 12px;
+  border-radius: 5px;
+  border-bottom: solid 3px goldenrod;
+  box-shadow: 3px 3px 3px gray;
+  transition: 0.3s;
+  width: 100px;
+  height: 40px;
+  display: inline;
+ }
+
+ .review-text-box-each{
+   height: 70px;
+   width: 700px;
+   background-color: white;
+   margin: 10px 0 0px 300px;
+   
+ }
+
+ .review-text-box-name{
+   margin: 10px 0 0 25px;
+   font-size: 16px;
+   height: 30px;
+ }
+
+ .review-text-comment{
+  position: relative;
+  display: inline-block;
+  color: #555;
+  font-size: 16px;
+  background: #e0edff;
+  height: 60px;
+  margin: 5px 0 20px 150px;
+  padding: 5px;
+  border-radius: 5px;
+  
+ }
+
+ .review-text-comment:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -30px;
+  margin-top: -15px;
+  border: 15px solid transparent;
+  border-right: 15px solid #e0edff; 
+}
+
+
+.review-text-star{
+  display: inline-block;
+  margin: 0 20px;
+}
+
+.star-on{
+  margin: 0 0 5px
 }

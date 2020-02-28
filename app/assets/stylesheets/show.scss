@@ -1,6 +1,4 @@
-.body{
-  background-color: #3CCACE;
-}
+
 .restaurant-show{
   margin: auto;
   height: 100%;
@@ -11,15 +9,18 @@
 
 .restaurant-show-box{
    margin-left: 250px;
+   margin-top: 50px;
 }
 
 
 .restaurant-show-name {
   background-color: #3CCACE;
-  margin:20px 320px 0 20px;
-  font-size: 35px;
+  margin: 20px 320px 0 20px;
+  padding-left: 20px;
+  font-size: 40px;
   font-weight:800;
-  width: 900px;  
+  width: 900px;
+
   
 }
 .restaurant-show-name-content{
