@@ -33,3 +33,8 @@ namespace :deploy do
   end
 end
 
+
+set :rbenv_ruby_version, '2.5.1p57'
+set :rbenv_path, '/home/deploy/.rbenv' #指定するとこのパスは以下のbundleが、指定しないと$HOME配下のbundleが実行された
+set :bundle_path, './vendor/bundle'
+set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} #{fetch(:rbenv_path)}/bin/rbenv exec"
