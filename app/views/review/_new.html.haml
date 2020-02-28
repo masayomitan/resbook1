@@ -1,4 +1,6 @@
 
+= render 'review/raty'
+
 .review
   = form_for @review do |f|
     = f.hidden_field :restaurant_id, value: @restaurant.id
@@ -9,7 +11,8 @@
     = f.hidden_field :star, id: :reviews
 
     :javascript
-      $(document).ready(function() {
+      $(document).on('turbolinks:load', function() {
+        jQuery(function($){
         $('#star').raty({
           size     :      36,
           starOff:  '#{asset_path('star-off.png')}',
@@ -19,6 +22,20 @@
           half: true,
         });
       });
+      })
+
+    -#   $(document).on('turbolinks:load', function() {
+    -#     $('.star1').raty({
+    -#         space: false,
+    -#         size     : 36,
+    -#         readOnly: true,
+    -#         starOff:  '<%= asset_path('star-off.png') %>',
+    -#         starOn : '<%= asset_path('star-on.png') %>',
+            score:function() {　　　　　　　　　 //ここを変更したら表示できるようになった。
+            return $(this).attr('data-rating');//
+    -#         }
+    -#     });
+    -# });
     = f.submit '評価する', class: "submit-btn"
 
 .review-text

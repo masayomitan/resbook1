@@ -19,4 +19,4 @@
                   = r.restaurant_name
               .restaurant-index-descripition
                 = r.address
-                = link_to "削除", restaurant_path(r.id), method: :delete
+                = link_to "削除", restaurant_path(r.id), method: :delete , data: {confirm: "本当に削除しますか？"}
