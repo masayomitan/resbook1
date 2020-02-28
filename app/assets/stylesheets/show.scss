@@ -1,8 +1,19 @@
-
-.restaurant-show{
-  margin: 0 250px;
-
+.body{
+  background-color: #3CCACE;
 }
+.restaurant-show{
+  margin: auto;
+  height: 100%;
+  width: 100%;
+  background-color: #f2f2f2;
+  
+}
+
+.restaurant-show-box{
+   margin-left: 250px;
+}
+
+
 .restaurant-show-name {
   background-color: #3CCACE;
   margin:20px 320px 0 20px;
@@ -14,7 +25,7 @@
 .restaurant-show-name-content{
   margin-left: 20px;
   margin-right: 320px;
-  background-color: rgb(237, 241, 237);
+  background-color: white;
   width: 900px; 
   font-size: 20px;
   
@@ -30,7 +41,7 @@
 
 .restaurant-show-name-content-3{
   display: inline-block;   
-  margin:0 0 0 600px;
+  margin:0 0 0 650px;
   
   
 }
@@ -41,15 +52,34 @@
 }
 
 .restaurant-show-name-content-pics{
-  width: 600px;
+  width: 1000px;
   height: 450px;
   margin-left: 20px;
+
+    &_1{
+      width: 670px;
+      height: 500px;
+    display: inline-block;
+    margin-top: 2px;
+    }
+    &_2{
+      width: 230px;
+      height: 122px;
+      float: right;
+      margin-right :100px;
+    }
 }
+
+.restaurant-show-name-content-pics_3{
+  margin: 2px;
+  background-color: white;
+}
+
 
 .restaurant-show-name-content-other {
   display: flex; 
   justify-content: left;
-  margin: 30px;
+  margin: 50px;
 
 }
 
@@ -58,7 +88,7 @@
   font-size: 15px;
   width: 300px;
   &_describe{
-    background-color: rgb(237, 241, 237);
+    background-color: white;
     width: 900px;
     height: 330px;
     margin: 15px;
@@ -90,13 +120,13 @@
   height: 330px;
   padding: 5px 0 0 5px;
   margin: 0 5px 0 0;
-  background-color: rgb(237, 241, 237);
+  background-color: white;
   font-weight:800;
   font-size: 15px;
   width: 300px;
   text-align: center;
   display: inline-block;
-  float: left;
+  float: left;  
 }
 
 
