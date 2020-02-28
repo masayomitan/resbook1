@@ -7,35 +7,23 @@
     = f.text_field :comment, class: "text-field"
 
     #star
-    = f.label :raty,'評価 '
-    = f.hidden_field :star, id: :reviews
+    = f.label :star,'評価 '
+    = f.hidden_field :star, value: :star
 
     :javascript
       $(document).on('turbolinks:load', function() {
         jQuery(function($){
-        $('#star').raty({
-          size     :      36,
-          starOff:  '#{asset_path('star-off.png')}',
-          starOn:  '#{asset_path('star-on.png')}',
-          starHalf: '#{asset_path('star-half.png')}',
-          scoreName: 'review[star]',
-          half: true,
+          $('#star').raty({
+            size:     36,
+            starOff:  '#{asset_path('star-off.png')}',
+            starOn:  '#{asset_path('star-on.png')}',
+            starHalf: '#{asset_path('star-half.png')}',
+            scoreName: 'review[star]',
+            half: true,
+          });
         });
-      });
       })
 
-    -#   $(document).on('turbolinks:load', function() {
-    -#     $('.star1').raty({
-    -#         space: false,
-    -#         size     : 36,
-    -#         readOnly: true,
-    -#         starOff:  '<%= asset_path('star-off.png') %>',
-    -#         starOn : '<%= asset_path('star-on.png') %>',
-            score:function() {　　　　　　　　　 //ここを変更したら表示できるようになった。
-            return $(this).attr('data-rating');//
-    -#         }
-    -#     });
-    -# });
     = f.submit '評価する', class: "submit-btn"
 
 .review-text
@@ -45,3 +33,4 @@
       = r.user.name
       .review-text-comment
         = r.comment
+        = r.star
