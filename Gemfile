@@ -78,8 +78,10 @@ gem 'active_hash'
 gem "pry-rails"
 gem 'rails-i18n'
 gem "toastr-rails"
+
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'fog-aws'
 
 gem 'rating'
 gem 'jquery-rails' 
