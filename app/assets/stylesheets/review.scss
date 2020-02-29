@@ -55,16 +55,18 @@
  }
 
  .review-text-comment{
-  position: relative;
+  position: absolute;
   display: inline-block;
   color: #555;
   font-size: 16px;
   background: #e0edff;
   height: 60px;
-  margin: 5px 0 20px 150px;
+  width: 430px;
+  margin: 5px 0 20px 50px;
   padding: 5px;
   border-radius: 5px;
   letter-spacing: 3px;
+  word-wrap:break-word;
   
  }
 

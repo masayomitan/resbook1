@@ -20,16 +20,18 @@
   font-size: 40px;
   font-weight:800;
   width: 900px;
-
+  border-radius: 5px;
   
 }
 .restaurant-show-name-content{
   margin-left: 20px;
   margin-right: 320px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   background-color: white;
   width: 900px; 
   font-size: 20px;
-  
+  border-radius: 5px;
 }
 
 .restaurant-show-name-content-1{
@@ -81,7 +83,12 @@
   display: flex; 
   justify-content: left;
   margin: 50px;
+  
 
+}
+
+.restaurant-show-name-content-menu_1{
+  text-align: center;
 }
 
 .restaurant-show-name-content-menu{
@@ -91,14 +98,16 @@
   &_describe{
     background-color: white;
     width: 900px;
-    height: 330px;
+    height: 230px;
     margin: 15px;
+    border-radius: 5px;
+    letter-spacing: 3px;
    
   }
 }
 
 .restaurant-show-name-content-describe{
-  width: 600px;
+  // width: 600px;
 }
 
 
@@ -119,6 +128,7 @@
 
 .restaurant-show-name-content-list{
   height: 330px;
+  border-radius: 5px;
   padding: 5px 0 0 5px;
   margin: 0 5px 0 0;
   background-color: white;

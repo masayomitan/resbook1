@@ -1,14 +1,15 @@
 #header
   .header_name
-    = link_to "restaurants", root_path, class: "mainHeader"
+    = link_to "resbook", root_path, class: "mainHeader"
+    .header-register
+      = link_to "お店登録", new_restaurant_path, class: "mainHeader1"
+      .header-mypages
+      = link_to "マイページ", mypages_path, class: "mainHeader1"
     .header_user
       - if user_signed_in?
         #{current_user.name}さん
-        = link_to "ログアウト", destroy_user_session_path, method: :delete
+        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "mainHeader1"
       - else
-        = link_to "ログイン", new_user_session_path
-        = link_to "新規登録", new_user_registration_path
-  .header-register
-    = link_to "お店登録", new_restaurant_path
-    .header-mypages
-    = link_to "マイページ", mypages_path
+        = link_to "ログイン", new_user_session_path, class: "mainHeader1"
+        = link_to "新規登録", new_user_registration_path, class: "mainHeader1"
+    
