@@ -11,6 +11,13 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def show
+    @review = Review.find(params[:id])
+    @pimages = @restaurant.iamges
+    @reviews = @restaurant.reviews.order(created_at: :desc)
+  end
+
+
 
   private
   def review_params
