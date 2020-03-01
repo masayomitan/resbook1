@@ -40,5 +40,6 @@
             .review-text-comment
               = r.comment
             .review-text-delete
+            - if user_signed_in? && current_user.id == r.user_id
               = link_to "削除", review_path(r), method: :delete 
             
