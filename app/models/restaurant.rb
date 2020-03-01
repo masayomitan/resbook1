@@ -17,7 +17,7 @@ class Restaurant < ApplicationRecord
   after_validation :geocode, if: :address_changed?
 
 
-  validates :restaurant_name,   presence: true
+  validates :restaurant_name,   presence: true, length: { in: 1..30 } 
   validates :describe, presence: true, length: { in: 1..800 }
   validates :address,                  null: false
   validates :tel,                      null: false
