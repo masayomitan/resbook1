@@ -18,12 +18,11 @@
             = o.genre.name
           .coverpage_dinner_list_box_describe
             %i.fas.fa-comments
-            -# - @restaurant.review.each do |i|
-            -#   = o.reviews.comment
+            -# - @reviews.each(@comment) do |i|
+            -#   = i.comment #ここを表示させたい
       
   .seeya
    
 
 = render 'shared/footer'
-
-
+-# -if @reviews.present?
