@@ -10,7 +10,6 @@ class RestaurantsController < ApplicationController
   def new
     @restaurant = Restaurant.new
     @restaurant.images.new
-    # @restaurant.holidays.new
     4.times { @restaurant.images.new }
     
   end
