@@ -19,8 +19,9 @@
           .coverpage_dinner_list_box_describe
             %i.fas.fa-comments
             -if @reviews.present?
-              - @reviews.each do |r|
-                = r.comment #ここを表示させたい
+              - @restaurant[1..-1].each do |res|
+                - res.reviews.each do |review|
+                  = review.comment
       
    
 = render 'shared/footer'
