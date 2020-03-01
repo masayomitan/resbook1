@@ -24,6 +24,8 @@ class Restaurant < ApplicationRecord
   validates :average_price_lunch,      null: false
   validates :average_price_dinner,     null: false
   validates :genre,                    null: false
+
+  validates :images, presence: true
   
   
 end
