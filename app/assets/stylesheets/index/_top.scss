@@ -29,6 +29,7 @@ background-color: #f2f2f2;
           height: 200px;
           width: 260px;
           background-color: blanchedalmond;
+          color: black;
        
         }
 
@@ -38,13 +39,16 @@ background-color: #f2f2f2;
           height:200px;
           width: 330px;
           word-wrap:break-word;
+          color: black;
 
-        &_name{
+        &_name a{
           font-weight: 800;
           font-size: 20px;
           margin-left: 10px;
           margin-top: 10px;
+          color: black;
         }
+       
       
         &_address{
           margin-left: 10px;
