@@ -21,11 +21,8 @@
 |average_price_dinner   |integer|null: false|
 |genre_id               |integer|null: false|
 |tel                    |integer|null: false|
-|user                   |references|null: false|
-
-|latitude               |float|
-|longitude              |float|
-
+|latitude               |float  |
+|longitude              |float  |
 |cards                  |boolean|
 |parking                |boolean|
 |all_you_can_eat        |boolean|
@@ -36,6 +33,7 @@
 |party                  |boolean|
 |takeout                |boolean|
 |holiday                |boolean|
+|user                   |references|null: false|
 ### Association
 - belongs_to_active_hash :genre
 - belongs_to :user, optional: true
@@ -76,3 +74,14 @@
 url
 http://18.180.65.107/
 
+# 制作理由
+このアプリケーションを作成した目的として以下をあげる:
+
+自分の好きなアプリケーションの模擬サイトを作ることによるスキルの向上
+
+スクールで某フリマアプリを作成したのですが、自分が担当しなかった部分のアウトプットを含む＋αの機能の実施
+経験にない実装への挑戦(javascriptを使用したslider機能、modal windowの作成、google map apiによる映画館を探す機能の実装、いいね機能の実装)
+
+今後の課題
+
+映画館を探す機能におけるユーザーの位置情報埋め込み、user同士におけるチャット画面の実装、映画サイトのカテゴリー分類

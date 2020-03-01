@@ -1,6 +1,5 @@
 class ReviewsController < ApplicationController
 
-
   def create
     @review = Review.new(review_params)
     if @review.save
@@ -9,12 +8,6 @@ class ReviewsController < ApplicationController
       flash[:alert] = "両方入力してください"
        redirect_back(fallback_location: root_path)
     end
-  end
-
-  def show
-    @review = Review.find(params[:id])
-    @pimages = @restaurant.iamges
-    @reviews = @restaurant.reviews.order(created_at: :desc)
   end
 
 
