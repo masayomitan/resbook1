@@ -13,13 +13,13 @@
 ## restaurant テーブル
 |Column|Type|Options|
 |------|----|-------|
-|restaurant_name        |integer|null: false|
-|describe               |integer|null: false|
-|address                |integer|null: false| 
-|tel                    |string|null: false|
-|average_price_lunch    |string|null: false|
-|average_price_dinner   |string|null: false|
-|genre_id               |string|null: false|
+|restaurant_name        |string |null: false|
+|describe               |text   |null: false|
+|address                |string |null: false| 
+|tel                    |integer|null: false|
+|average_price_lunch    |integer|null: false|
+|average_price_dinner   |integer|null: false|
+|genre_id               |integer|null: false|
 |tel                    |integer|null: false|
 |user                   |references|null: false|
 
