@@ -32,7 +32,7 @@ class RestaurantsController < ApplicationController
   end
 
   def edit
-    @images = Image.find(params[:id])
+    @images = Image.find_by(params[:id])
     4.times { @restaurant.images.new }
     
   end
