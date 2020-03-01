@@ -3,8 +3,11 @@ class RestaurantsController < ApplicationController
   before_action :set_reataurant, except: [:index, :new, :create]
   before_action :authenticate_user!, except: [:show]
 
+    
   def index
-    @restaurant = Restaurant
+    @restaurant = Restaurant.all.order("id DESC")
+    @image = Image.all.order("id DESC")
+    @reviews = Review.all.order("id DESC").first(1)
   end
 
   def new

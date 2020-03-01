@@ -18,7 +18,7 @@ class Restaurant < ApplicationRecord
 
 
   validates :restaurant_name,   presence: true, length: { in: 1..30 } 
-  validates :describe, presence: true, length: { in: 1..800 }
+  validates :describe, presence: true, length: { in: 1..700 }
   validates :address,                  null: false
   validates :tel,                      null: false
   validates :average_price_lunch,      null: false
