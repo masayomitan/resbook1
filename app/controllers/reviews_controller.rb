@@ -12,6 +12,14 @@ class ReviewsController < ApplicationController
 
 
 
+
+  def destroy
+    @review = Review.find(params[:id])
+    @review.destroy
+    redirect_back(fallback_location: request.referer, notice: "消しました！")
+  end
+
+
   private
   def review_params
     params.require(:review).permit(:comment, :star, :restaurant_id).merge(user_id: current_user.id)

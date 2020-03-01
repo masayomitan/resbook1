@@ -12,12 +12,6 @@ class ReservationsController < ApplicationController
      redirect_to root_path notice:"予約が完了しました"
   end
 
-  #
-  #   @reservation.restaurant = restaurant
-  #   @reservation.save
-
-  #   flash[:notice] = "Booked Successfully!"
-
   def your_reservations
     @restaurants = current_user.restaurants
   end

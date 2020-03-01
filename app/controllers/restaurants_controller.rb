@@ -32,14 +32,20 @@ class RestaurantsController < ApplicationController
   end
 
   def edit
-    @images = Image.find_by(params[:id])
-    4.times { @restaurant.images.new }
-    
+    if user_signed_in? && @restaurant.user_id == current_user.id
+      @images = Image.find_by(params[:id])
+      4.times { @restaurant.images.new }
+    else
+      redirect_to mypages_path
+    end
+      
   end
 
   def update
+
+    new_params = restaurant_params
     
-    if @restaurant.update(restaurant_params)
+    if @restaurant.update(new_params)
       redirect_to restaurant_path(@restaurant), notice: "保存しました！"
     else
       flash[:alert] = "間違えてる？"

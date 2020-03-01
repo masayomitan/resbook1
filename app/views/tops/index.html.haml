@@ -18,10 +18,7 @@
             = o.genre.name
           .coverpage_dinner_list_box_describe
             %i.fas.fa-comments
-            -if @reviews.present?
-              - @restaurant[1..-1].each do |res|
-                - res.reviews.each do |review|
-                  = review.comment
+            = o.describe.truncate(210, separator: '.')
       
    
 = render 'shared/footer'

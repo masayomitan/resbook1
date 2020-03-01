@@ -40,4 +40,6 @@
             = r.star
             .review-text-comment
               = r.comment
+            .review-text-delete
+              = link_to "削除", review_path(r), method: :delete 
             

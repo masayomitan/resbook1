@@ -4,10 +4,12 @@ class MypagesController < ApplicationController
 
 
   def index
-    @restaurant = Restaurant.all
+    
+    @restaurant = Restaurant.all.where(user_id: current_user.id)
   end
 
   def show
+    
     @restaurants = Restaurant.all
   end
 
