@@ -1,7 +1,7 @@
 class MypagesController < ApplicationController
 
   before_action :set_reataurant, except: [:index, :new, :create]
-
+  before_action :authenticate_user!
 
   def index
     
