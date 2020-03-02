@@ -73,10 +73,6 @@ class RestaurantsController < ApplicationController
   end
 
 
-  def is_authorised
-    redirect_to root_path, alert: "You don't have permission" unless current_user.id == @restaurant.user_id
-  end
-
   def restaurant_params
     params.require(:restaurant).permit(:restaurant_name, :describe, :address, :tel, :average_price_lunch, :average_price_dinner, :genre_id,
       :cards, :parking, :all_you_can_eat, :all_you_can_drink, :tobacco, :free_wifi, :private_room, :party, :takeout,:holiday,
