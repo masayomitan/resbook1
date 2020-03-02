@@ -3,6 +3,6 @@ class Review < ApplicationRecord
   belongs_to :restaurant
 
   validates :star,       presence: true
-  validates :comment,    presence: true, length: { in: 1..50 }
+  validates :comment,    presence: true, length: { in: 1..100 }
   
 end

@@ -7,7 +7,7 @@ class ReviewsController < ApplicationController
     if @review.save
        redirect_to   restaurant_path(@review.restaurant), notice: "レビューしました！"
     else
-      flash[:alert] = "両方入力してください"
+      flash[:alert] = "両方入力してください,もしくは文字数オーバーです"
        redirect_back(fallback_location: root_path)
     end
   end
