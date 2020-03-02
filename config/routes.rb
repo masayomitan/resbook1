@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   :sessions => 'users/sessions'   
 } 
 
+devise_scope :user do
+  post 'users/guest_sign_in', to: 'users/sessions#new_guest'
+end
+
   root 'tops#index'
   
   resources :restaurants do
@@ -17,7 +21,8 @@ Rails.application.routes.draw do
     resources :reservations, only: [:new, :create]
   end
 
-  resources :reviews
-  resources :mypages
+  resources :reviews, only: [:create, :destroy]
+  resources :mypages, only: [:index, :show]
+  
 
 end
