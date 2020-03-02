@@ -4,14 +4,15 @@
 .review
   .new_review
     = form_for @review do |f|
-      = f.hidden_field :restaurant_id, value: @restaurant.id
-      #star
-        = f.hidden_field :comment, id: :review_star
-      #comment
-        = f.text_field :comment, class: "form-control_1", placeholder: "100文字まで"
-        .comment-btn
-          = f.submit 'コメント', class: "submit-btn"
-      
+      - if user_signed_in?
+        = f.hidden_field :restaurant_id, value: @restaurant.id
+        #star
+          = f.hidden_field :comment, id: :review_star
+        #comment
+          = f.text_field :comment, class: "form-control_1", placeholder: "100文字まで"
+          .comment-btn
+            = f.submit 'コメント', class: "submit-btn"
+        
 
       :javascript
         $(document).on('turbolinks:load', function initialize() {
