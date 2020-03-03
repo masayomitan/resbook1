@@ -37,7 +37,8 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
   gem 'rspec-rails'
-   gem 'spring-commands-rspec'
+  gem 'spring-commands-rspec'
+  gem 'factory_bot_rails'
   
 end
 
