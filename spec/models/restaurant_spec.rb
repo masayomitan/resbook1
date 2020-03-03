@@ -3,7 +3,6 @@ require 'rails_helper'
 describe Restaurant do
   describe '#create' do
     it "is invalid without a restaurant_name" do
-      # binding.pry
       restaurant = build(:restaurant, restaurant_name: "")
       restaurant.valid?
       expect(restaurant.errors[:restaurant_name]).to include("can't be blank")
