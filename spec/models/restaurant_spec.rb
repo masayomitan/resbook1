@@ -6,37 +6,37 @@ describe Restaurant do
       # binding.pry
       restaurant = build(:restaurant, restaurant_name: "")
       restaurant.valid?
-      expect(restaurant.errors[:name]).to include("can't be blank")
+      expect(restaurant.errors[:restaurant_name]).to include("can't be blank")
     end
 
     it "is invalid without a description" do
       restaurant = build(:restaurant, describe: "")
       restaurant.valid?
-      expect(restaurant.errors[:description]).to include("can't be blank")
+      expect(restaurant.errors[:describe]).to include("can't be blank")
     end
 
-    it "is invalid without a size" do
+    it "is invalid without a tel" do
       restaurant = build(:restaurant, tel: "")
       restaurant.valid?
-      expect(restaurant.errors[:size]).to include("can't be blank")
+      expect(restaurant.errors[:tel]).to include("can't be blank")
     end
 
-    it "is invalid without a status_id" do
+    it "is invalid without a average_price_lunch" do
       restaurant = build(:restaurant, average_price_lunch: "")
       restaurant.valid?
-      expect(restaurant.errors[:status_id]).to include("can't be blank")
+      expect(restaurant.errors[:average_price_lunch]).to include("can't be blank")
     end
 
-    it "is invalid without a postage_id" do
-      restaurant = build(:restaurant, average_price_lunch: "")
+    it "is invalid without a average_price_dinner" do
+      restaurant = build(:restaurant, average_price_dinner: "")
       restaurant.valid?
-      expect(restaurant.errors[:postage_id]).to include("can't be blank")
+      expect(restaurant.errors[:average_price_dinner]).to include("can't be blank")
     end
 
-    it "is invalid without a region_id" do
+    it "is invalid without a genre" do
       restaurant = build(:restaurant, genre: "")
       restaurant.valid?
-      expect(restaurant.errors[:region_id]).to include("can't be blank")
+      expect(restaurant.errors[:genre]).to include("can't be blank")
     end
 
     
