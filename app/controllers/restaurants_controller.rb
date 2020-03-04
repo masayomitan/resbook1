@@ -22,7 +22,6 @@ class RestaurantsController < ApplicationController
     if @restaurant.save
       redirect_to other_restaurant_path(@restaurant), notice: "他の情報を入力してください！"
     else
-      flash[:alert] = "Something went wrong..."
       render :new
     end
   end
