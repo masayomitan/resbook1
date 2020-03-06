@@ -1,15 +1,14 @@
 FROM ruby:2.5.1
-RUN apt-get update -qq && \
-    apt-get install -y apt-utils \
-                       build-essential \
-                       libpq-dev \
-                       nodejs \
-                       mysql-client
-RUN mkdir /app
-WORKDIR /app
-ADD Gemfile /app/Gemfile
-ADD Gemfile.lock /app/Gemfile.lock
-RUN bundle install -j4
-ADD . /app
+RUN apt-get update && apt-get install -y nodejs --no-install-recommends && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y mysql-client --no-install-recommends && rm -rf /var/lib/apt/lists/*
+RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs
 
-EXPOSE 3000
+WORKDIR /myproject
+
+ADD Gemfile /myproject/Gemfile
+ADD Gemfile.lock /myproject/Gemfile.lock
+
+RUN gem install bundler
+RUN bundle install
+
+ADD . /myproject
