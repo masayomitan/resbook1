@@ -27,5 +27,9 @@ class Restaurant < ApplicationRecord
 
   validates :images, presence: true
   
+  def self.search(search)
+    return Restaurant.all unless search
+    Restaurant.where('text LIKE(?)', "%#{search}%")
+  end
   
 end

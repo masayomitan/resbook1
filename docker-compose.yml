@@ -3,13 +3,11 @@ services:
   db:
     image: mysql:5.6
     ports:
-      - "3306:3306"
+      - "3000:3000"
     restart: always
     environment:
       - MYSQL_DATABASE=resbook_db
       - MYSQL_ROOT_PASSWORD=password
-    volumes:
-      - /var/run/mysqld/mysqld.sock
     command: --innodb_use_native_aio=0
   web:
     build:
