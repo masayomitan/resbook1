@@ -1,8 +1,7 @@
 class RestaurantsController < ApplicationController
 
-  before_action :set_reataurant, except: [:index, :new, :create]
+  before_action :set_reataurant, except: [:index, :new, :create, :search]
   before_action :authenticate_user!, except: [:show]
-
     
   def index
     @restaurant = Restaurant.all.order("id DESC")
@@ -63,7 +62,9 @@ class RestaurantsController < ApplicationController
     end
   end
 
-
+  def search
+    @restaurant = Restaurant.search(params[:search])
+  end
 
   private
 

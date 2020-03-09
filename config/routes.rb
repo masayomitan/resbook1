@@ -12,6 +12,9 @@ end
   root 'tops#index'
   
   resources :restaurants do
+    collection do
+      get 'search'
+    end
     member do
       get 'time'
       get 'image'
