@@ -29,7 +29,9 @@ class Restaurant < ApplicationRecord
   
   def self.search(search)
     return Restaurant.all unless search
-    Restaurant.where('text LIKE(?)', "%#{search}%")
+    Restaurant.where(['restaurant_name LIKE ?', "%#{search}%"])
   end
+
+  
   
 end

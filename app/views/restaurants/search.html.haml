@@ -4,14 +4,14 @@
 
 .coverpage_list
   .coverpage_list_search
-    = form_with(url: search_restaurants_path, local: true, method: :get, class: "search-form") do |form|
-      = form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input"
-      = form.submit "検索", class: "search-btn"
+    = form_tag(search_restaurants_path,:method => 'get') do
+      = text_field_tag :restaurant_name
+      = submit_tag '検索', :name => nil
 
   .coverpage_dinner_list
-    - @restaurant.each do |o,i|
+    - @restaurant.each do |o|
       %ul
-      = link_to restaurant_path(o.id) do
+      = link_to restaurant_path(o) do
         = image_tag o.images[0].image.url, class: "dinner_pics"
       .coverpage_dinner_list_box
         .coverpage_dinner_list_box_name
