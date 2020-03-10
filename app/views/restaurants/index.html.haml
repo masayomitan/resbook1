@@ -1,21 +1,21 @@
-= render 'shared/header'
-.row
-  .col-md-3
-    %ul.sidebar-list
-      %li.sidebar-item= link_to "レストラン登録履歴", new_restaurant_path,  class: "sidebar-link active"
-      %li.sidebar-item= link_to "予約履歴", new_restaurant_path,  class: "sidebar-link active"
-  .col-md-8
-    .panel.panel-default
-      .panel-heading
-        Listings
-      .panel-body
-        - @restaurant.each do |r|
-          .row
-            .col-md-2
-              = link_to restaurant_path(r.id) do
-                = image_tag r.images[0].image.url, class: "pro_pic", width: "250px", height: "250px"
-                .col-md-7
-                  = r.restaurant_name
-              .restaurant-index-descripition
-                = r.address
-                = link_to "削除", restaurant_path(r.id), method: :delete , data: {confirm: "本当に削除しますか？"}
+-# = render 'shared/header'
+-# .row
+-#   .col-md-3
+-#     %ul.sidebar-list
+-#       %li.sidebar-item= link_to "レストラン登録履歴", new_restaurant_path,  class: "sidebar-link active"
+-#       %li.sidebar-item= link_to "予約履歴", new_restaurant_path,  class: "sidebar-link active"
+-#   .col-md-8
+-#     .panel.panel-default
+-#       .panel-heading
+-#         Listings
+-#       .panel-body
+-#         - @restaurant.each do |r|
+-#           .row
+-#             .col-md-2
+-#               = link_to restaurant_path(r.id) do
+-#                 = image_tag r.images[0].image.url, class: "pro_pic", width: "250px", height: "250px"
+-#                 .col-md-7
+-#                   = r.restaurant_name
+-#               .restaurant-index-descripition
+-#                 = r.address
+-#                 = link_to "削除", restaurant_path(r.id), method: :delete , data: {confirm: "本当に削除しますか？"}
