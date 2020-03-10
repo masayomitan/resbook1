@@ -5,7 +5,7 @@
 .coverpage_list
   .coverpage_list_search
     = form_tag(search_restaurants_path,:method => 'get') do
-      = text_field_tag :restaurant_name
+      = text_field_tag :restaurant_name,'', placeholder: '店名検索'
       = submit_tag '検索', :name => nil
 
   .coverpage_dinner_list
