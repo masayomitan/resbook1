@@ -1,7 +1,7 @@
 class RestaurantsController < ApplicationController
 
   before_action :set_reataurant, except: [:index, :new, :create, :search]
-  before_action :authenticate_user!, except: [:show]
+  before_action :authenticate_user!, except: [:show, :search]
     
 
   def new
