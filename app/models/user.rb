@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :validatable, password_length: 4..128
 
-  validates :name, length: { maximum: 20 }
+  validates :name, presence: true, length: { maximum: 20 }
   validates :email,                 presence: true, uniqueness: { case_sensitive: false }
   has_many :reservations, dependent: :destroy
   has_many :restaurant
