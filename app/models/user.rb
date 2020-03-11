@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :validatable, password_length: 4..128
 
-  validates :name, presence: true, length: { maximum: 20 }
+  validates :name, length: { maximum: 20 }
   validates :email,                 presence: true, uniqueness: { case_sensitive: false }
   has_many :reservations, dependent: :destroy
   has_many :restaurant
@@ -13,7 +13,6 @@ class User < ApplicationRecord
 
   def self.guest
     find_or_create_by!(email: 'guest@com') do |user|
-      user.name = test
       user.password = SecureRandom.urlsafe_base64
       # user.confirmed_at = Time.now  # Confirmable を使用している場合は必要
     end
