@@ -1,5 +1,5 @@
 ##  url
-http://18.180.65.107/
+http://reabook.net/
 
 
 
@@ -90,7 +90,7 @@ http://18.180.65.107/
 ##  サーバー , 開発環境等
 - Nginx
 - MySQL 5.6
-- AWS（EC2, S3）
+- AWS（EC2, S3, route 53）
 - Capistrano3
 - unicorn
 - rspec
