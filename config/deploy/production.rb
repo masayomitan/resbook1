@@ -60,4 +60,4 @@
 #     # password: "please use keys"
 #   }
 
-server 'reabook.net', user: 'ec2-user', roles: %w{app db web}
+server 'http://reabook.net/', user: 'ec2-user', roles: %w{app db web}
