@@ -13,3 +13,6 @@
 .byebug_history
 
 config/secrets.yml
+nginx/log
+node_modules
+
