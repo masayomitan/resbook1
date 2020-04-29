@@ -57,6 +57,7 @@ test:
 #
 production:
   <<: *default
-  database: resbookproduction
+  database: resbook_production
   username: root
   socket:
+  host: localhost
