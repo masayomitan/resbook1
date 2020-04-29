@@ -61,4 +61,3 @@ production:
   database: resbook_production
   username: root
   socket:
-  url: <%= ENV['DATABASE_URL'] %>
