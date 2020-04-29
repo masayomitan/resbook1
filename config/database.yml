@@ -59,5 +59,6 @@ production:
   <<: *default
   database: resbook_production
   username: root
-  password:
   socket:
+  host:     <%= ENV['DB_HOST'] %>
+  password: <%= ENV['DB_PWD'] %>
