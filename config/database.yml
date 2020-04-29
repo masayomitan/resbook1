@@ -60,4 +60,3 @@ production:
   database: resbookproduction
   username: root
   socket:
-  host: db
