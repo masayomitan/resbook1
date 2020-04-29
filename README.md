@@ -4,6 +4,13 @@ https://reabook.net/ 削除ずみ
 ![readme](https://user-images.githubusercontent.com/59156545/80555589-ac682080-8a0b-11ea-8ebc-0359fb854d83.jpg)
 
 
+# 機能一覧
+・ユーザー登録機能  
+・ログイン、ログアウト機能  
+・お店の登録、編集、削除機能  
+・一言コメントの登録、編集、削除機能  
+・検索機能
+
 
 
 # DB 設計
