@@ -60,5 +60,4 @@ production:
   database: resbookproduction
   username: root
   socket:
-  host:     <%= ENV['DB_HOST'] %>
-  password: <%= ENV['DB_PWD'] %>
+  host: db
