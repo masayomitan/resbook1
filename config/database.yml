@@ -57,7 +57,7 @@ test:
 #
 production:
   <<: *default
-  database: resbook_production
+  database: resbookproduction
   username: root
   socket:
   host:     <%= ENV['DB_HOST'] %>
