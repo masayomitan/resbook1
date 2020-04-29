@@ -57,7 +57,8 @@ test:
 #
 production:
   <<: *default
+  adapter: postgresql
   database: resbook_production
   username: root
   socket:
-  host: localhost
+  url: <%= ENV['DATABASE_URL'] %>
