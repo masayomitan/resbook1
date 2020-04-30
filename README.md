@@ -3,6 +3,8 @@ https://reabook.net/ 削除ずみ
 
 ![readme](https://user-images.githubusercontent.com/59156545/80555589-ac682080-8a0b-11ea-8ebc-0359fb854d83.jpg)
 
+[![Image from Gyazo](https://i.gyazo.com/393f63461ded2acc98153d7577c874d7.gif)](https://gyazo.com/393f63461ded2acc98153d7577c874d7)
+
 
 # 機能一覧
 ・ユーザー登録機能  
